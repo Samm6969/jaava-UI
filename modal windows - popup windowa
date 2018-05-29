@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  
+  <!-- Trigger the modal with a button -->
+<button class="btn btn-primary" id="myBtn">click me</button>
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog" style="width: 1400px;" role="document">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal"></button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body">
+          
+          <div class="container" style="width:1250px;background:#ebeff2">
+  <h2>Inline form</h2>
+  <form class="form-inline" role="form">
+   <div class="form-group" style="padding:10px 20px">
+      <label for="name">Task Name</label>
+	  <input type="name" class="form-control" id="name" size="55" placeholder="Enter name">
+   </div>
+   
+   <div class="form-group" style="padding:10px 20px">
+      <label for="taskType">Task Type:</label>
+      <select class="form-control" id="taskType">
+        <option>Manual</option>
+        <option>Automatic</option>
+        <option>3</option>
+        <option>4</option>
+      </select>
+    </div>
+   
+   <div class="form-group" style="padding:10px 20px">
+      <label for="category">Category:</label>
+      <select class="form-control" id="category">
+        <option>Investigation</option>
+        <option>Remediation</option>
+      </select>
+   </div>
+   
+   <div class="form-group" style="padding:10px 20px">
+      <label for="action">Action:</label>
+      <select class="form-control" id="action">
+        <option>Auto remediation</option>
+        <option>URL Analysis</option>
+        <option>Data Colletion</option>
+        <option>File Malware Analysis</option>
+      </select>
+    </div> 
+    <div class="form-group" style="padding:10px 20px">
+      <label for="action">Predecessor:</label>
+      <select class="form-control" id="action">
+        <option>Start</option>
+        <option>1.2</option>
+        <option>1.3</option>
+      </select>
+    </div>
+    <div class="form-group" style="padding:10px 20px">
+      <label for="action">Followed by:</label>
+      <select class="form-control" id="action">
+        <option>1.2</option> 
+      </select>
+    </div>  
+    <div class="checkbox" style="padding:10px 20px 10px 190px">
+    <label><input type="checkbox"> Fork to Task and </label>
+   </div>
+   
+   <div class="form-group">
+									  
+										<label class="control-label"><input  type="radio" name="remember" /> wait</label>
+										<label class="control-label"><input  type="radio" name="remember" /> continue</label>
+									  
+   </div>
+</form>
+
+<div class="input-fields">
+<ul class="nav nav-tabs">
+  <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
+  <li><a data-toggle="tab" href="#menu1">Menu 1</a></li>
+</ul>
+
+<div class="tab-content">
+  <div id="home" class="tab-pane fade in active">
+    <h3>HOME</h3>
+    <p>Some content.</p>
+  </div>
+  <div id="menu1" class="tab-pane fade">
+    <h3>Menu 1</h3>
+    <p>Some content in menu 1.</p>
+  </div>
+  
+</div>
+</div>
+
+</div>
+          
+          
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+</div>
+
+<script>
+$(document).ready(function(){
+    $("#myBtn").click(function(){
+        $("#myModal").modal();
+    });
+});
+</script>
+
+</body>
+</html>
