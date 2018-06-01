@@ -1,0 +1,199 @@
+<div class="modal fade" id="clickAstepModal" role="dialog">
+									  <div class="modal-dialog" style="width: 1400px;" role="document">
+									  
+										<!-- Modal content-->
+										<div class="modal-content">
+										  <div class="modal-header"></div>
+										  <div class="modal-body">
+											 
+												<div class="container" style="width:1380px;background:#ebeff2;margin-bottom:0px;">
+													<h3 style="float:left">Task Details</h3>
+													<form class="form-inline" role="form">
+														<div class="row">
+																	<div class="form-group col-md-6 mb-3" >
+																			<label for="name">Task Name</label>
+																			<input type="name" class="form-control" id="name" size="65" placeholder="Enter name" />
+																	</div>
+															
+																	<div class="form-group col-md-2 mb-2" >
+																			<label for="taskType">Task Type:</label>
+																			<select class="form-control" id="taskType">
+																			  <option value="manual">Manual</option>
+																			  <option value="automatic">Automatic</option>
+																			</select>
+																	</div>
+															
+																	<div class="form-group col-md-2 mb-2" >
+																			<label for="category">Category:</label>
+																			<select class="form-control" id="category">
+																			  <option>Investigation</option>
+																			  <option>Remediation</option>
+																			</select>
+																	</div>
+															
+																	<div class="form-group col-md-2 mb-2" >
+																			<label for="action">Action:</label>
+																			<select class="form-control" id="action">
+																			  <option value="">select here</option>
+																			  <option value="autoremediation">Auto remediation</option>
+																			  <option value="urlanalysis">URL Analysis</option>
+																			  <option value="datacollection">Data Colletion</option>
+																			  <option value="filemalwareanalysis">File Malware Analysis</option>
+																			</select>
+																	</div>
+
+																	 <div class="form-group col-md-2 mb-2" >
+																		<label for="action">Predecessor:</label>
+																		<select class="form-control" id="">
+																		  <option value="">select here</option>
+																		  <option value="start">Start</option>
+																		  <option value="1.2">1.2</option>
+																		  <option value="1.3">1.3</option>
+																		</select>
+																	  </div>
+																	  <div class="form-group col-md-2 mb-2" >
+																		<label for="action">Followed by:</label>
+																		<select class="form-control" id="action">
+																		  <option>1.2</option> 
+																		</select>
+																	  </div>  
+																	  <!-- <div class="checkbox col-md-2 mb-2" style="">
+																	  
+																	 </div> -->
+																	 
+																	 <div class="form-group col-md-7 mb-2" >
+																			<label><input type="checkbox"> Fork to Task and </input></label>
+																										  <label class="control-label"><input  type="radio" name="remember" /> wait</label>
+																										  <label class="control-label"><input  type="radio" name="remember" /> continue</label>
+																										
+																	 </div>
+																	</div>
+
+														
+													 </form>
+													  
+													  <div class="tab-able">
+													  <ul class="nav nav-tabs">
+														<li class="active"><a data-toggle="tab" href="#inputfield" id="inputtab">Input Field</a></li>
+														<li><a data-toggle="tab" href="#outputfield" id="outputtab">Output Field</a></li>
+													  </ul>
+													  
+													  <div class="tab-content">
+														<div id="inputfield" class="tab-pane fade active">
+														  <div id="urlanalysisinput" style="display: none; padding-top:20px;">
+
+																<div class="col-md-5 col-md-offset-1">
+																	<div class="panel panel-default panel-table">
+																			<table class="table table-striped table-bordered table-list">
+																					<thead>
+																						<tr>
+																							<th>Field Name</th>
+																							<th>Type</th>
+																							<th><em class="fa fa-cog"></em></th>
+																						</tr>
+																					</thead>
+																					<tbody>
+																						<tr>
+																							<td>url</td>
+																							<td><select class="form-control" id="category" style="size:10">
+																								  <option>Text box</option>
+																								  <option>Text Area</option>
+																								  <option>Numeric</option>
+																								  <option>threat.field_name</option>
+																								</select></td>
+																							<td align="center"><a class="btn btn-danger"><em class="fa fa-trash"></em></a></td>
+																						</tr>
+																					</tbody>
+																				</table>
+																		</div>
+																		<!-- todos: need corrections  -->
+																		<div class="add-field">
+																				<span class="fa fa-plus-circle" id="myBtn" style="font-size: 20px; float:left;"
+																				data-toggle="tooltip"  data-placement="auto"
+																				title="add more fields">Add more fields</span>
+																		</div>
+											
+																	</div>
+																	
+														  </div>
+														</div>
+
+														<!-- ***** outer field ***** -->
+													  <div id="outputfield" class="tab-pane">
+														  
+														  <div id="urlanalysisoutput" style="display: none">
+
+																<div class="col-md-5 col-md-offset-1">
+																		<div class="panel panel-default panel-table">
+																				<table class="table table-striped table-bordered table-list">
+																						<thead>
+																							<tr>
+																								<th>Field Name</th>
+																								<th>Type</th>
+																								<th>Linked to input field?</th>
+																								<th><em class="fa fa-cog"></em></th>
+																							</tr>
+																						</thead>
+																						<tbody>
+																							<tr>
+																								<td>Response Code</td>
+																								<td><select class="form-control" id="changeNameHere" style="size:10">
+																									  <option>Text box</option>
+																									  <option>Text Area</option>
+																									  <option>Numeric</option>
+																									  <option>threat.field_name</option>
+																									</select>
+																								</td>
+																								<td><select class="form-control" id="changeNameHere" style="size:10">
+																										<option>URL</option>
+																										<option>NA</option>
+																										<option>NA</option>
+																									  </select>
+																								  </td>
+																								<td align="center"><a class="btn btn-danger"><em class="fa fa-trash"></em></a></td>
+																							</tr>
+																							<tr>
+																									<td>Other details</td>
+																									<td><select class="form-control" id="changeNameHere" style="size:10">
+																										  <option>Text box</option>
+																										  <option>Text Area</option>
+																										  <option>Numeric</option>
+																										  <option>threat.field_name</option>
+																										</select>
+																									</td>
+																									<td><select class="form-control" id="changeNameHere" style="size:10">
+																											<option>URL</option>
+																											<option>NA</option>
+																											<option>NA</option>
+																										  </select>
+																									  </td>
+																									<td align="center"><a class="btn btn-danger"><em class="fa fa-trash"></em></a></td>
+																								</tr>
+																						</tbody>
+																					</table>
+																			</div>
+																			<!-- todos: corrections needed -->
+																			<div class="add-field">
+																				<span class="fa fa-plus-circle" id="myBtn" style="font-size: 20px; float:left;"
+																				data-toggle="tooltip"  data-placement="auto"
+																				title="add more fields">Add more fields</span>
+																		    </div>
+												
+																		</div>
+														  </div>
+													  </div>
+												</div>
+														
+														<!-- tab content ends  -->
+													  													  
+										   </div>
+										</div>
+									 </div>
+										    <div class="modal-footer">
+										    <button type="button" class="btn btn-default" data-dismiss="modal">Save</button>
+											<button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+										  </div>
+										</div>
+										
+									  </div>
+									</div>
