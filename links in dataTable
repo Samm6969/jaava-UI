@@ -1,0 +1,37 @@
+ $('#example1').DataTable({
+								data: divdata2,
+						        "columns": [
+						            { "data": "id" },
+						            { "data": "modelFk",
+						            	"render" : function(data, type, row, meta) {
+						                    if(type === 'display'){
+						                        return $('<a>')
+						                            .attr('href', data)
+						                            .text(data)
+						                            .wrap('<div></div>')
+						                            .parent()
+						                            .html();
+						                    } else {
+						                        return data;
+						                    }
+						                }
+						            	},
+						            { "data": "stageFk" },
+						            { "data": "category" },
+						            { "data": "created",
+						            	"render": function(data,type,row,meta) {
+						            		
+						            		           console.log("this is data: "+data);
+						            		           console.log("this is type: "+type);
+						            		           console.log("this is row: " +row);
+						            		           console.log("this is meta: "+meta);
+
+						            		             var a = '<a href=""></i>'+ row.created +'</a>';
+						            		            	 //'<a href="https://www.paladion.net/"><i class="fa fa-edit"></i>'+ row.created +'</a>';
+						            		                     //'<a href="' + https://www.google.com + '">' + sanitized + '</a>';
+						            		             return a;
+						            	         }
+						            	},
+									{ "data": "modified" },
+						        ]
+							});
