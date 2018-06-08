@@ -1,0 +1,50 @@
+ $('#example1').DataTable({
+								data: divdata2,
+						        "columns": [
+						            { "data": "id" },
+						            { "data": "modelFk",
+						            	"render": function(data,type,row,meta) {
+						            		
+				            		           console.log(data);
+				            		           
+				            		           console.log("this is type: "+type);
+				            		           console.log("this is row: " +row);
+				            		           console.log("this is meta: "+meta);
+				            		           
+				            		          var bb = '\''+data+'\'';
+				            		          // <a href="javascript:void(0);" class="myClass" onclick="callAjax(" +data+');'="">66-1 starter</a>     
+				            		          // <a href="javascript:void(0);" class="myClass" onclick="callAjax(" +data+');'="">66-1 starter</a>
+				            		           // <a href="javascript:void(0);" class="myClass" onclick="callAjax('+data+');">66-1 starter</a>
+				            		          console.log("this is blaa: "+bb);
+
+					            		     
+				            		          var a = '<a href="#" class="myClass" onclick="nextWindow('+bb+');" >'+ row.modelFk +'</a>';
+				            		          
+				            		          
+				            		          // var a = '<a href="http://localhost:8080/adrworkflow/pages/Nworkflow/noverviewadmin.xhtml?play='+row.modelFk+';" class="myClass" onclick="nextWindow();" >'+ row.modelFk +'</a>';
+
+					            		       
+					            		      // var a = '<a href="javascript:void(0);" class="myClass" onclick="callAjax('+bb+');" >'+ row.modelFk +'</a>';
+
+					            		      // var a = '<a href="#" onclick="callAjax('+example1+');" >'+ row.modelFk +'</a>';
+
+				            		           
+				            		      // var commandLink= 
+				            		   //    var a = '<a href="/pages/Nworkflow/noverviewadmin?playbookName='+row.modelFk+'" >'+ row.modelFk +'</a>';
+				            		            	 //'<a href="https://www.paladion.net/"><i class="fa fa-edit"></i>'+ row.created +'</a>';
+				            		                     //'<a href="' + https://www.google.com + '">' + sanitized + '</a>';
+				            		       
+				            		       
+//				            		     var a =   ' <h:commandLink value="'+row.modelFk+'"'+
+//										' action="/pages/Nworkflow/noverviewadmin">'+ 
+//				            		     '<f:param name="playbokkName" value="'+row.modelFk+'"/> </h:commandLink>';													
+										
+				            		          return a;
+				            	         }
+						            }, 
+						            { "data": "stageFk" },
+						            { "data": "category" },
+						            { "data": "created"},
+									{ "data": "modified" },
+						        ]
+							});
