@@ -1,0 +1,36 @@
+
+	  $(document).ready(function() {
+  
+
+   $("#myBtn").click(function(){
+        $("#clickAstepModal").modal();
+    });
+   
+   $('[data-toggle="tooltip"]').tooltip();
+
+
+
+  
+  $("#action").change(function () {
+        //var action= this.value;
+
+		
+		//other dropdown values
+       //var drop1 = $('#drop1').val();
+	   
+		   var action = this.value;
+         //  alert(action);
+		   var tasktype = $("#taskType").find("option:selected").text();
+         //  alert("this is tasktype:" + tasktype);
+//var taskType = $('#manual').val();
+      
+	   if(action =='urlanalysis' && tasktype == 'Automatic'){
+        $("#urlanalysisinput").show();
+		$("#urlanalysisoutput").show();	
+	   } else {
+		   $("#urlanalysisinput").hide();
+			$("#urlanalysisoutput").hide();
+		   
+	 }
+  });
+	  });
