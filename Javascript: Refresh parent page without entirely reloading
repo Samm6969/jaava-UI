@@ -1,0 +1,3 @@
+window.location.reload()
+
+source: https://stackoverflow.com/questions/15897434/javascript-refresh-parent-page-without-entirely-reloading
