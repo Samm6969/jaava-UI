@@ -1,0 +1,3 @@
+<h:commandButton  class="btn btn-primary" action="/pages/Nworkflow/newtrail2"
+								 value="flowChart">
+					</h:commandButton>
