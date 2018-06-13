@@ -1,0 +1,8 @@
+By using t0Fixed() and parseFloat()
+
+i = parseFloat((i + 0.1).toFixed(1)); 
+
+in for loop use that at i++ 
+which means replace i++ with i = parseFloat((i + 0.1).toFixed(1)); 
+
+source: https://stackoverflow.com/questions/19290628/how-to-increment-number-by-0-01-in-javascript-using-a-loop
