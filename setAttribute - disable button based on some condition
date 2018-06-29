@@ -1,0 +1,4 @@
+if(JSON.data === 1100) {
+		  		 document.getElementById("runPlaybookSave").setAttribute("disabled","disabled");
+		  		 document.getElementById("runPlaybookSubmit").setAttribute("disabled","disabled");	
+			  	}
