@@ -1,0 +1,38 @@
+ link for example: http://jsfiddle.net/rQBFZ/918/
+ 
+ Source:
+  <select id="action" name="source">
+    <option value="">select here</option>
+     <option value="autoremediation">Auto remediation</option>
+     <option value="urlanalysis">URL Analysis</option>
+     <option value="filemalware">File Malware Analysis</option>
+</select>
+
+Status:
+
+<select id="configuration" name="status">
+     <option value="">select here</option>
+    <option value="secondWrite">Second Write</option>
+   <option value="googleSiteCheck">Google Site Check</option>
+</select>
+
+//script
+$(document).ready(function() {
+  
+  $("#action").change(function() {
+    
+    let el = this.value ;
+    console.log(el);
+    
+    if(el === "filemalware" ) {
+    console.log("blalaaa");
+     $("#configuration option:last-child").remove();
+     $("#configuration").append("<option>ADR Internal</option>");
+    }
+      else if(el === "urlanalysis" ) {
+        $("#configuration option:last-child").remove() ;
+        $("#configuration").append("<option value='googleSiteCheck'>Google Site Check</option>");
+        }
+  });
+  
+});
