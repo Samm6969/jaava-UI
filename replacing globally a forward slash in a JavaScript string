@@ -1,0 +1,5 @@
+str = 'hhahahhahah/that and/if';
+
+var newstr = str.replace(/[/]/g, 'ForwardSlash');
+
+source: https://stackoverflow.com/questions/4566771/how-to-globally-replace-a-forward-slash-in-a-javascript-string
