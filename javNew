@@ -137,3 +137,93 @@ class OrderConfirmRoute extends Component {
 }
 
 export default OrderConfirmRoute
+------
+
+import _ from 'lodash'
+
+class OrdersValidationFactory {
+  constructor(dataSet) {
+    console.log('-------->1 ', dataSet)
+    this.validationSrc = dataSet
+  }
+
+  getAllValidationsForGridView = () => {
+    let response = []
+    response = _.concat(
+      response,
+      this.applyValidationsForGridByErrorType('tradeInputValidationErrors'),
+    )
+    console.log('iiiiiiiiiiiii11----', response)
+    response = _.concat(
+      response,
+      this.applyValidationsForGridByErrorType(
+        'tradeBusinessRulesValidationErrors',
+      ),
+    )
+
+    console.log('iiiiiiiiiiiii22----', response)
+    response = _.concat(
+      response,
+      this.applyValidationsForGridByErrorType(
+        'tradeComplianceRulesValidationErrors',
+      ),
+    )
+    console.log('iiiiiiiiiiiii33----', response)
+    return response
+  }
+
+  applyValidationsForGridByErrorType = errorType => {
+    if (errorType === 'tradeInputValidationErrors') {
+      return this.getTradeInputValidationErrors()
+    }
+    if (errorType === 'tradeBusinessRulesValidationErrors') {
+      return this.getTradeBusinessRulesValidationErrors(
+        this.validationSrc.tradeBusinessRulesValidationErrors,
+      )
+    }
+    return this.getTradeComplianceRulesValidationErrors()
+  }
+
+  getTradeInputValidationErrors = () => []
+
+  getTradeBusinessRulesValidationErrors = errorDetails => {
+    console.log('00000000----> ', errorDetails)
+    const response = []
+    _.forEach(errorDetails, entity => {
+      switch (entity.errorCode) {
+        case '1':
+          response.push({
+            iconClass: 'glyphicon glyphicon-material-warning',
+            message: 'some random text',
+          })
+          break
+        case '3':
+          response.push({
+            iconClass: 'glyphicon glyphicon-material-warning',
+            message: 'some random text',
+          })
+          break
+        case '4':
+          response.push({
+            iconClass: 'glyphicon glyphicon-material-warning',
+            message: 'Incomplete Audit',
+          })
+          break
+        case '5':
+          response.push({
+            iconClass: 'glyphicon glyphicon-material-warning',
+            message: 'Incomplete Audit',
+          })
+          break
+        default:
+          break
+      }
+    })
+    console.log('66666----> ', response)
+    return response
+  }
+
+  getTradeComplianceRulesValidationErrors = () => []
+}
+
+export default OrdersValidationFactory
