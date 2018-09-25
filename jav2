@@ -1,0 +1,46 @@
+enterOrders:
+id: "T3JkZXJSZXNwb25zZXM6YWM1MDVkMWYtZGE1OS00ZDY4LWEzNDAtMWE2NWVlNzY2MzQ2"
+orderResponses: Array(2)
+0:
+id: "T3JkZXJSZXNwb25zZTplYjM1YjUwNy03NWIxLTQ4N2QtODdkMi1mMTU4YzVlMWZhMjk="
+orderRequest:
+approvalMessage: null
+comments: null
+fundAccountId: "RnVuZEFjY291bnQ6eyJmdW5kSWQiOjIwNTcxOCwiaW52QWNjb3VudElkIjo1NzExNjF9"
+id: "T3JkZXJSZXF1ZXN0OjVlODFmZjI0LTI2OTctNGZmZS05MTljLWRiNzViYzQ0OTU4OQ=="
+investorCashSettlementInstruction: null
+investorCustodySettlementInstruction: null
+investorPaymentInstruction: null
+overriddenSettlementPeriod: null
+qtyType: "CURRENCY"
+quantity: 32323232
+redemptionFeeType: null
+side: "BUY"
+tradeDate: "2018-09-25"
+userTradeWindowId: -1
+__proto__: Object
+orderResponseId: "eb35b507-75b1-487d-87d2-f158c5e1fa29"
+tradeBusinessRulesValidationErrors: Array(1)
+0: {errorCode: "5", errorLevel: "WARNING", errorMessage: "Approval Trade Size"}
+length: 1
+__proto__: Array(0)
+tradeComplianceRulesValidationErrors: Array(3)
+0: {errorCode: "5", errorLevel: "WARNING", errorMessage: "Approval Trade Size"}
+1: {errorCode: "5", errorLevel: "WARNING", errorMessage: "Approval Trade Size"}
+2: {errorCode: "5", errorLevel: "WARNING", errorMessage: "Approval Trade Size"}
+length: 3
+__proto__: Array(0)
+tradeInputValidationErrors: []
+__proto__: Object
+1: {id: "T3JkZXJSZXNwb25zZTo3OTExNWY5Mi01NjE2LTQ1ODAtYTI3Yy0xMjI5YTlmMzUyMDM=", orderResponseId: "79115f92-5616-4580-a27c-1229a9f35203", orderRequest: {…}, tradeInputValidationErrors: Array(0), tradeBusinessRulesValidationErrors: Array(1), …}
+length: 2
+__proto__: Array(0)
+orderResponsesId: "ac505d1f-da59-4d68-a340-1a65ee766346"
+tradeValidationSummaryMessages: Array(3)
+0: "Approval Trade Size"
+1: "Market Value"
+2: "Audit calculations could not be performed due to stale or insufficient data."
+length: 3
+__proto__: Array(0)
+__proto__: Object
+__proto__: Objec
