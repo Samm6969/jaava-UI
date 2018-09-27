@@ -1437,5 +1437,83 @@ OrderList.propTypes = {
 
 export default reduxForm({ form: 'OrderList' })(OrderList)
 
+import _ from 'lodash'
+
+class OrdersValidationFactory {
+  constructor(dataSet) {
+    this.validationSrc = dataSet
+  }
+
+  getAllValidationsForGridView = () => {
+    let response = []
+    response = _.concat(
+      response,
+      this.applyValidationsForGridByErrorType('tradeInputValidationErrors'),
+    )
+    response = _.concat(
+      response,
+      this.applyValidationsForGridByErrorType(
+        'tradeBusinessRulesValidationErrors',
+      ),
+    )
+    response = _.concat(
+      response,
+      this.applyValidationsForGridByErrorType(
+        'tradeComplianceRulesValidationErrors',
+      ),
+    )
+    return response
+  }
+
+  applyValidationsForGridByErrorType = errorType => {
+    if (errorType === 'tradeInputValidationErrors') {
+      return this.getTradeInputValidationErrors()
+    }
+    if (errorType === 'tradeBusinessRulesValidationErrors') {
+      return this.getTradeBusinessRulesValidationErrors(
+        this.validationSrc.tradeBusinessRulesValidationErrors,
+      )
+    }
+    return this.getTradeComplianceRulesValidationErrors(
+      this.validationSrc.tradeComplianceRulesValidationErrors,
+    )
+  }
+
+  getTradeInputValidationErrors = () => []
+
+  getTradeBusinessRulesValidationErrors = errorDetails => {
+    const response = []
+    const iconClassesMap = {
+      WARNING: 'material-warning',
+      ERROR: 'material-error',
+      RESTRICTED: 'material-restricted',
+    }
+    _.forEach(errorDetails, entity => {
+      response.push({
+        iconClass: iconClassesMap[entity.errorLevel],
+        message: entity.errorMessage,
+      })
+    })
+    return response
+  }
+
+  getTradeComplianceRulesValidationErrors = errorDetails => {
+    const response = []
+    const iconClassesMap = {
+      WARNING: 'material-warning',
+      ERROR: 'material-error',
+      RESTRICTED: 'glyphicon glyphicon-material-restricted',
+    }
+    _.forEach(errorDetails, entity => {
+      response.push({
+        iconClass: iconClassesMap[entity.errorLevel],
+        message: entity.errorMessage,
+      })
+    })
+    return response
+  }
+}
+
+export default OrdersValidationFactory
 
 
