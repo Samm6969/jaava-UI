@@ -1,0 +1,550 @@
+import _ from 'lodash'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import {
+  FillContainer,
+  Card,
+  CardHeader,
+  CardContent,
+  CardFooter,
+  Button,
+  Snackbar,
+} from '@fc/react-playbook'
+import { graphql } from 'react-relay'
+import commitMutation from '../../utils/commitMutation'
+import s from './OrderConfirmRoute.scss'
+import OrderList from '../../components/OrderConfirm/OrderList'
+
+class OrderConfirmRoute extends Component {
+  static propTypes = {
+    history: PropTypes.shape({
+      goBack: PropTypes.func.isRequired,
+    }).isRequired,
+  }
+
+  state = {
+    enterOrderPayload: [],
+    selected: [],
+    response: {},
+  }
+
+  static getDerivedStateFromProps(props) {
+    const { location } = props
+    const enterOrderPayload =
+      typeof location.state !== 'undefined' &&
+      typeof location.state.enterOrderPayload !== 'undefined'
+        ? location.state.enterOrderPayload
+        : []
+
+    const selected =
+      typeof location.state !== 'undefined' &&
+      typeof location.state.selected !== 'undefined'
+        ? location.state.selected
+        : []
+
+    const response =
+      typeof location.state !== 'undefined' &&
+      typeof location.state.response !== 'undefined'
+        ? location.state.response
+        : []
+
+    return {
+      enterOrderPayload,
+      selected,
+      response,
+    }
+  }
+
+  handleSubmit = () => {
+    this.confirmCreateOrders()
+  }
+
+  confirmCreateOrders = async () => {
+    const { enterOrderPayload } = this.state
+    const mutation = graphql`
+      mutation OrderConfirmRouteMutation($input: OrderRequestsInput!) {
+        confirmOrders(input: $input) {
+          id
+          orderResponsesId
+        }
+      }
+    `
+    await commitMutation({
+      mutation,
+      variables: {
+        input: {
+          clientMutationId: _.uniqueId('mmf-order-request-confirm'),
+          orderRequests: enterOrderPayload,
+        },
+      },
+      onError: () => {
+        this.setState({
+          snackbar: 'error',
+          message:
+            'Order did not create successfully, please contact administrator.',
+        })
+      },
+      onCompleted: () => {
+        this.setState({
+          snackbar: 'success',
+          message: 'Order has been created successfully.',
+        })
+      },
+    })
+  }
+
+  handleCancel = () => {
+    const { history } = this.props
+    history.goBack()
+  }
+
+  render() {
+    const { snackbar, message, selected, response } = this.state
+    console.log('----> seleceted', JSON.stringify(selected))
+    console.log('----> response', JSON.stringify(response))
+    return (
+      <FillContainer>
+        <Card className={s.card}>
+          <CardHeader>Order Confirm</CardHeader>
+          <CardContent style={{ overflow: 'auto' }}>
+            <OrderList
+              orders={response.enterOrders.orderResponses}
+              tradeValidationSummaryMessages={
+                response.enterOrders.tradeValidationSummaryMessages
+              }
+              selectedShortTermFunds={selected}
+            />
+          </CardContent>
+          <CardFooter className={s.footer}>
+            <Button onClick={this.handleCancel}>Cancel</Button>
+            <Button primary type="submit" onClick={this.handleSubmit}>
+              Confirm
+            </Button>
+          </CardFooter>
+        </Card>
+        <Snackbar
+          message={message || ''}
+          alertStyle={snackbar}
+          active={!!snackbar}
+          onDismiss={() => {
+            const { history } = this.props
+            this.setState({ snackbar: null })
+            history.push('/trade/direct/short-term')
+          }}
+          timeout={20000}
+        />
+      </FillContainer>
+    )
+  }
+}
+
+export default OrderConfirmRoute
+...
+import React, { Fragment } from 'react'
+import { Field } from 'redux-form'
+import _ from 'lodash'
+import moment from 'moment'
+import cx from 'classnames'
+import PropTypes from 'prop-types'
+import { Icon } from '@fc/react-playbook'
+
+import OrdersValidationFactory from './OrdersValidationFactory'
+import { getLongAccount } from '../../utils/Stringify'
+// import CurrencyRenderer from '../../renderers/CurrencyRenderer'
+import TimeFormatter from '../TimeFormatter/TimeFormatter'
+import s from './Order.scss'
+import ValueField from '../ValueField'
+
+const getAccountByFoundAccountId = (
+  selectedShortTermFunds,
+  fundAccountIdRef,
+) => {
+  let selectedAccount = {}
+  _.forEach(selectedShortTermFunds.selected, entity => {
+    const account = _.find(
+      entity.accounts,
+      item => item.id === fundAccountIdRef,
+    )
+    if (account) {
+      selectedAccount = account
+    }
+  })
+  return selectedAccount
+}
+
+const generateValidationDetailsIndex = index => index
+const getValidationDetails = values => {
+  const validations = new OrdersValidationFactory(values)
+  const validationDetails = validations.getAllValidationsForGridView()
+  return (
+    <div>
+      {validationDetails.map((error, index) => (
+        <div key={generateValidationDetailsIndex(index)}>
+          <Icon name={error.iconClass} className={cx(s.warning)} />
+          {error.message}{' '}
+        </div>
+      ))}
+    </div>
+  )
+}
+
+const formatSelectedTradeWindowDisplayText = (entity, timeZone) => {
+  const {
+    label,
+    redEndTime,
+    subEndTime,
+    redemptionSettlementPeriod,
+    subscriptionSettlementPeriod,
+  } = entity.tradeWindow
+
+  const tz = moment.tz(timeZone).zoneAbbr()
+  return label ? (
+    <span style={{ fontWeight: 400 }}>{label}</span>
+  ) : (
+    <Fragment>
+      <span style={{ fontWeight: 400 }}>Window Cutoff </span>
+      <span style={{ paddingRight: '5px' }}>
+        ({tz}
+        ):
+      </span>
+      <span>Buy:</span>
+      <TimeFormatter time={subEndTime} showTimeZone={false} />
+      <span style={{ paddingLeft: '5px', paddingRight: '5px' }}> | </span>
+      <span>Sell:</span>
+      <TimeFormatter time={redEndTime} showTimeZone={false} />
+      <br />
+      <span style={{ paddingRight: '23px' }}>Settlement Period: </span>
+      <span style={{ paddingRight: '5px' }}>
+        (T+
+        {subscriptionSettlementPeriod})
+      </span>
+      <span style={{ paddingLeft: '27px', paddingRight: '5px' }}> | </span>
+      <span>
+        (T+
+        {redemptionSettlementPeriod})
+      </span>
+    </Fragment>
+  )
+}
+
+const order = props => {
+  const { value, selectedShortTermFunds } = props
+  const selectedAccountEntity = getAccountByFoundAccountId(
+    selectedShortTermFunds,
+    value.orderRequest.fundAccountId,
+  )
+  const showValidations =
+    value.tradeBusinessRulesValidationErrors.length ||
+    value.tradeComplianceRulesValidationErrors.length ||
+    value.tradeInputValidationErrors.length
+  console.log(
+    '51----------------------- Order.js ',
+    value,
+    selectedAccountEntity,
+  )
+  return (
+    <div className={s.confirmOrderWrap}>
+      <div className={s.form}>
+        <div className={s.column}>
+          <div className={cx(s.row, s.accountInfo)}>
+            <Field
+              name="fund"
+              props={{
+                formGroupClassName: s.accountInfo,
+                inline: true,
+                showDelimiter: true,
+                label: 'Fund',
+                renderer: () => (
+                  <div className={s.accountInfo}>
+                    {_.get(selectedAccountEntity, 'fund.name')}(
+                    {_.get(selectedAccountEntity, 'fund.provider.name')})
+                  </div>
+                ),
+              }}
+              component={ValueField}
+            />
+            <Field
+              name="account"
+              props={{
+                formGroupClassName: s.account,
+                inline: true,
+                showDelimiter: true,
+                label: 'Account',
+                renderer: () => (
+                  <div>
+                    {getLongAccount(_.get(selectedAccountEntity, 'account'))}
+                  </div>
+                ),
+              }}
+              component={ValueField}
+            />
+            <Field
+              props={{
+                formGroupClassName: s.currencyField,
+                inline: true,
+                showDelimiter: true,
+                label: 'Market Value',
+                renderer: () => (
+                  <div>
+                    {_.get(selectedAccountEntity, 'balance.balanceAmt')}
+                  </div>
+                ),
+              }}
+              name="Market Value"
+              component={ValueField}
+            />
+
+            <Field
+              props={{
+                formGroupClassName: s.numericField,
+                inline: true,
+                showDelimiter: true,
+                label: 'Total Share',
+                renderer: () => (
+                  <div>{_.get(selectedAccountEntity, 'balance.shares')}</div>
+                ),
+              }}
+              name="Total Share"
+              component={ValueField}
+            />
+            <Field
+              props={{
+                formGroupClassName: s.currencyField,
+                inline: true,
+                showDelimiter: true,
+                label: 'Est. Market Value',
+                renderer: () => (
+                  <div>
+                    {_.get(selectedAccountEntity, 'balance.balanceAmt')}
+                  </div>
+                ),
+              }}
+              component={ValueField}
+              name="Est. Market Value"
+            />
+            <Field
+              props={{
+                formGroupClassName: s.numericField,
+                inline: true,
+                showDelimiter: true,
+                label: 'Est. Share',
+              }}
+              name={_.get(selectedAccountEntity, 'estimatedShare')}
+              component={ValueField}
+            />
+            <Field
+              props={{
+                formGroupClassName: s.percentageField,
+                inline: true,
+                showDelimiter: true,
+                label: 'Fund % Owned',
+                renderer: ({ val }) => (val ? `${val}%` : ''),
+              }}
+              name={_.get(selectedAccountEntity, 'fundPercentOwned')}
+              component={ValueField}
+            />
+            <Field
+              props={{
+                formGroupClassName: s.currencyField,
+                inline: true,
+                showDelimiter: true,
+                label: 'Est. Total Market Value',
+                renderer: ({ val }) => (val ? `$${val}` : ''),
+              }}
+              name={_.get(selectedAccountEntity, 'estimatedTotalMarketValue')}
+              component={ValueField}
+            />
+            <Field
+              props={{
+                formGroupClassName: s.numericField,
+                inline: true,
+                showDelimiter: true,
+                label: 'Est. Total Share',
+              }}
+              name={_.get(selectedAccountEntity, 'estimatedTotalShare')}
+              component={ValueField}
+            />
+          </div>
+          <div className={cx(s.row, s.accountInfo)}>
+            <Field
+              name="side"
+              props={{
+                formGroupClassName: s.account,
+                inline: true,
+                showDelimiter: true,
+                label: 'Order Side',
+                renderer: () => <div>{value.orderRequest.side}</div>,
+              }}
+              component={ValueField}
+            />
+            {value.orderRequest.redemptionFeeType ? (
+              <Field
+                name="redemptionFeeType"
+                props={{
+                  formGroupClassName: s.account,
+                  inline: true,
+                  showDelimiter: true,
+                  label: 'Redemption Type',
+                  renderer: () => (
+                    <div>{value.orderRequest.redemptionFeeType}</div>
+                  ),
+                }}
+                component={ValueField}
+              />
+            ) : (
+              ''
+            )}
+            <Field
+              name="qtyType"
+              props={{
+                formGroupClassName: s.account,
+                inline: true,
+                showDelimiter: true,
+                label: 'Quantity Type',
+                renderer: () => <div>{value.orderRequest.qtyType}</div>,
+              }}
+              component={ValueField}
+            />
+            <Field
+              name="quantity"
+              props={{
+                formGroupClassName: s.account,
+                inline: true,
+                showDelimiter: true,
+                label: 'Amount',
+                renderer: () => <div>{value.orderRequest.quantity}</div>,
+              }}
+              component={ValueField}
+            />
+            {_.get(selectedAccountEntity, 'settlementDate') ? (
+              <Field
+                name="settlementDate"
+                props={{
+                  formGroupClassName: s.account,
+                  inline: true,
+                  showDelimiter: true,
+                  label: 'Settlement Date',
+                  renderer: () => (
+                    <div>
+                      {_.get(selectedAccountEntity, 'settlementDate.name')}
+                    </div>
+                  ),
+                }}
+                component={ValueField}
+              />
+            ) : (
+              ''
+            )}
+            <Field
+              name="tradeDate"
+              props={{
+                formGroupClassName: s.account,
+                inline: true,
+                showDelimiter: true,
+                label: 'Trade Date',
+                renderer: () => (
+                  <div>{_.get(selectedAccountEntity, 'tradeDate')}</div>
+                ),
+              }}
+              component={ValueField}
+            />
+
+            {showValidations ? (
+              <Field
+                name="validations"
+                props={{
+                  formGroupClassName: s.account,
+                  inline: true,
+                  showDelimiter: true,
+                  label: 'Validations',
+                  renderer: () => <div>{getValidationDetails(value)}</div>,
+                }}
+                component={ValueField}
+              />
+            ) : (
+              ''
+            )}
+          </div>
+          <div className={s.row}>
+            {selectedAccountEntity.tradeWindow ? (
+              <Field
+                props={{
+                  formGroupClassName: s.settlementFields,
+                  inline: true,
+                  showDelimiter: true,
+                  label: 'Trade Window',
+                  renderer: () => (
+                    <div>
+                      {formatSelectedTradeWindowDisplayText(
+                        selectedAccountEntity,
+                        'EDT',
+                      )}
+                    </div>
+                  ),
+                }}
+                name="tradeWindow"
+                component={ValueField}
+              />
+            ) : (
+              ''
+            )}
+          </div>
+          <div className={s.row}>
+            {value.orderRequest.investorCashSettlementInstruction ? (
+              <Field
+                props={{
+                  formGroupClassName: s.settlementFields,
+                  inline: true,
+                  showDelimiter: true,
+                  label: 'Cash Settlement Instructions',
+                  renderer: () => (
+                    <div>
+                      {_.get(
+                        selectedAccountEntity,
+                        'cashSettlementInstructions.name',
+                      )}
+                    </div>
+                  ),
+                }}
+                name="cashSettlementInstructions"
+                component={ValueField}
+              />
+            ) : (
+              ''
+            )}
+            {value.orderRequest.investorCustodySettlementInstruction ? (
+              <Field
+                props={{
+                  formGroupClassName: s.settlementFields,
+                  inline: true,
+                  showDelimiter: true,
+                  label: 'Custody Settlement Instructions',
+                  renderer: () => (
+                    <div>
+                      {_.get(
+                        selectedAccountEntity,
+                        'custodySettlementInstructions.name',
+                      )}
+                    </div>
+                  ),
+                }}
+                name="custodySettlementInstructions"
+                component={ValueField}
+              />
+            ) : (
+              ''
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+order.propTypes = {
+  value: PropTypes.instanceOf(Object),
+  selectedShortTermFunds: PropTypes.instanceOf(Array),
+}
+export default order
+....
+
+
