@@ -33,3 +33,126 @@ orderResponsesId: "066e4568-679a-4226-bae4-56156d3855d7"
 tradeValidationSummaryMessages: ["Audit calculations could not be performed due to stale or insufficient data."]
 __proto__: Object
 __proto__: Object
+----------------------------
+
+// .confirmOrderWrap {
+//   display: flex;
+//   align-items: flex-start;
+//   background-color: rgba(196, 18, 18, 0.089);
+
+//   & ~ .confirmOrderWrap {
+//     border-top: 1px solid $color-border;
+//   }
+// }
+
+.confirmOrderWrap {
+  border-bottom: 1px solid $color-border;
+}
+
+.fund {
+  display: flex;
+  padding: $pad-xs $pad-sm;
+  font-weight: $font-bold;
+  font-size: $font-size-lg;
+  color: $CAL;
+  flex-wrap: wrap;
+  overflow: hidden;
+  border-bottom: 2px solid $CAL;
+  // margin-bottom: $pad-md;
+  margin-top: 20px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+  padding: $pad-sm;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+// .fieldRow {
+//   display: flex;
+//   flex-wrap: wrap;
+
+//   > div {
+//     flex: 1;
+//   }
+// }
+
+.form {
+  // Fix IE11 overflowing
+  overflow: hidden;
+  border-left: 0 solid $color-border;
+}
+
+.accountInfo {
+  font-weight: $font-medium;
+  color: $text-color-light;
+  font-size: $font-size-sm;
+}
+
+%field {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.account {
+  @extend %field;
+
+  width: 300px;
+  max-width: 300px;
+}
+
+.currencyField {
+  @extend %field;
+
+  width: 200px;
+  max-width: 200px;
+}
+
+.numericField {
+  @extend %field;
+
+  width: 150px;
+  max-width: 150px;
+}
+
+.percentageField {
+  @extend %field;
+
+  width: 150px;
+  max-width: 150px;
+}
+
+.spaceBetween {
+  justify-content: space-between;
+}
+
+.settlementFields {
+  // width: 300px;
+  max-width: 500px;
+  word-break: break-word;
+}
+
+.warning {
+  color: $color-warn;
+  margin-left: $pad-sm;
+}
+
+// .error {
+//   color: $color-error;
+//   margin-left: $pad-md;
+// }
+
+//.error {
+//  color: $color-error;
+//}
+
+//.icon + .icon {
+//  margin-left: $pad-xs;
+//}
