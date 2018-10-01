@@ -1,0 +1,35 @@
+>>> response:  
+Object
+enterOrders:
+id: "T3JkZXJSZXNwb25zZXM6MDY2ZTQ1NjgtNjc5YS00MjI2LWJhZTQtNTYxNTZkMzg1NWQ3"
+orderResponses: Array(1)
+0:
+fundAccount: {account: {…}, fund: {…}, supportedQtyTypes: {…}, cashInstructions: Array(25), custodyInstructions: Array(15), …}
+id: "T3JkZXJSZXNwb25zZTpjYzdmNGViNy0zNzhkLTRmYjctOWExZi1mYzU0N2E4OGM4ZjA="
+orderRequest:
+approvalMessage: null
+comments: null
+fundAccountId: "RnVuZEFjY291bnQ6eyJmdW5kSWQiOjkxNiwiaW52QWNjb3VudElkIjo4MjE2fQ=="
+id: "T3JkZXJSZXF1ZXN0OjViN2FhOTIwLTljOWItNDgwMi04OTZkLTg0MWYxMmVkNmFlMA=="
+investorCashSettlementInstruction: -99
+investorCustodySettlementInstruction: -99
+investorPaymentInstruction: null
+overriddenSettlementPeriod: null
+qtyType: "CURRENCY"
+quantity: 21212
+redemptionFeeType: null
+side: "BUY"
+tradeDate: "2018-10-01"
+userTradeWindowId: -1
+__proto__: Object
+orderResponseId: "cc7f4eb7-378d-4fb7-9a1f-fc547a88c8f0"
+tradeBusinessRulesValidationErrors: [{…}]
+tradeComplianceRulesValidationErrors: []
+tradeInputValidationErrors: []
+__proto__: Object
+length: 1
+__proto__: Array(0)
+orderResponsesId: "066e4568-679a-4226-bae4-56156d3855d7"
+tradeValidationSummaryMessages: ["Audit calculations could not be performed due to stale or insufficient data."]
+__proto__: Object
+__proto__: Object
