@@ -1,7 +1,550 @@
-{"selected":[{"fund":{"sedol":null,"id":"RnVuZDo5MTY=","fundType":"SHORT_TERM","provider":{"name":"Dreyfus"},"name":"AAA Test","longName":"test Fund","fundCategory":{"name":"PRIME"},"fundSubCategory":{"name":"FINANCIAL"},"currency":{"currencyCode":"USD"},"domicileCountry":{"name":"United States"},"autoSettlementModel":"REGISTERED","settlementPeriod":0,"contactName":"SSSS","contactPhone":"111-222-3333","cusip":"5554444XX","isin":null,"iso":"CHIBGOWJG","fundId":"916","ticker":null,"otherFundCode":null,"overrideSettlementDate":false,"supportedRedemptionFeeTypes":null,"expenseRatio":0.25,"fundWholeHoliday":false,"statistics":{"wam":30,"fitchRating":null,"naicRating":null,"spRating":null,"aum":9999000000,"dailyFactor":0.03,"nav":1,"shadowNav":1,"netFlows":-9999000,"moodyRating":null,"yld1Day":0.005,"yld7Day":0.005,"yld30Day":0.005,"liquidity1Day":0.123456,"liquidity7Day":0.256789,"stale":true,"dtEffective":"2017-07-13T17:59:59.000+0000","priceStale":true,"priceDtEffective":"2017-01-12T19:32:21.000+0000"},"supportTradeWindows":false,"subCutoffTime":"2018-09-27T22:00:00.000+0000","subCutoffTimeType":"N","redCutoffTime":"2018-09-27T22:00:00.000+0000","redCutoffTimeType":"N","taxable":null,"earlyCloseOrHoliday":false,"redemptionFeeInEffect":false,"redemptionGate":false,"subscriptionGate":false},"balance":{"stale":true,"accruedAmt":555.77,"balanceAmt":55555555.77,"balanceAmtUSDE":55555555.77,"estimatedMarketValue":55556111.54,"estimatedMarketValueUSDE":55556111.54,"shares":55555555.77,"value":55556111.54,"percentageOwned":0.005556111188118812,"balanceDt":"Tue Mar 20 2018 00:00:00 GMT-0400","fxRateDTO":{"usdMid":1,"stale":null,"effectiveDate":"2018-03-20T04:00:00.000+0000"}},"accounts":[{"id":"RnVuZEFjY291bnQ6eyJmdW5kSWQiOjkxNiwiaW52QWNjb3VudElkIjo4MjE2fQ==","account":{"name":"Account1","division":null,"client":null,"executePermission":"EXEC","tradeInstitution":{"location":{"name":"bos"},"institution":{"name":"democorp"}}},"balance":{"accruedAmt":555.77,"balanceDt":"2018-03-20T04:00:00.000+0000","balanceAmt":55555555.77,"balanceAmtUSDE":55555555.77,"estimatedMarketValue":55556111.54,"estimatedMarketValueUSDE":55556111.54,"shares":55555555.77,"currencyCode":"USD","value":55556111.54,"percentageOwned":0.005556111188118812,"stale":true,"fxRateDTO":{"usdMid":1,"stale":null,"effectiveDate":"2018-03-20T04:00:00.000+0000"}},"fund":{"sedol":null,"id":"RnVuZDo5MTY=","fundType":"SHORT_TERM","provider":{"name":"Dreyfus"},"name":"AAA Test","longName":"test Fund","fundCategory":{"name":"PRIME"},"fundSubCategory":{"name":"FINANCIAL"},"currency":{"currencyCode":"USD"},"domicileCountry":{"name":"United States"},"autoSettlementModel":"REGISTERED","settlementPeriod":0,"contactName":"SSSS","contactPhone":"111-222-3333","cusip":"5554444XX","isin":null,"iso":"CHIBGOWJG","fundId":"916","ticker":null,"otherFundCode":null,"overrideSettlementDate":false,"supportedRedemptionFeeTypes":null,"expenseRatio":0.25,"fundWholeHoliday":false,"statistics":{"wam":30,"fitchRating":null,"naicRating":null,"spRating":null,"aum":9999000000,"dailyFactor":0.03,"nav":1,"shadowNav":1,"netFlows":-9999000,"moodyRating":null,"yld1Day":0.005,"yld7Day":0.005,"yld30Day":0.005,"liquidity1Day":0.123456,"liquidity7Day":0.256789,"stale":true,"dtEffective":"2017-07-13T17:59:59.000+0000","priceStale":true,"priceDtEffective":"2017-01-12T19:32:21.000+0000"},"supportTradeWindows":false,"subCutoffTime":"2018-09-27T22:00:00.000+0000","subCutoffTimeType":"N","redCutoffTime":"2018-09-27T22:00:00.000+0000","redCutoffTimeType":"N","taxable":null,"earlyCloseOrHoliday":false,"redemptionFeeInEffect":false,"redemptionGate":false,"subscriptionGate":false},"tradeWindows":null,"quantityType":{"value":"CURRENCY","label":"CURRENCY"},"tradeDate":"2018-09-27","selected":true,"orderSide":{"value":1,"label":"Buy"},"amount":"1111"}],"tradeWindows":[],"_id":"record-1"},{"fund":{"sedol":null,"id":"RnVuZDozMDI2","fundType":"SHORT_TERM","provider":{"name":"2.9 FundsSSS"},"name":"ABC Fed MMF Share Class CC","longName":"ABC Fed MMF Share Class CC","fundCategory":{"name":"TAX EXEMPT"},"fundSubCategory":{"name":"COMMERCE"},"currency":{"currencyCode":"USD"},"domicileCountry":{"name":"Luxembourg"},"autoSettlementModel":"REGISTERED","settlementPeriod":0,"contactName":"Suneetha","contactPhone":"61-666-4444","cusip":null,"isin":"SDD333XXDD33","iso":"RYUVPFRJI","fundId":"3026","ticker":"454545","otherFundCode":null,"overrideSettlementDate":false,"supportedRedemptionFeeTypes":null,"expenseRatio":0.25,"fundWholeHoliday":false,"statistics":{"wam":30,"fitchRating":null,"naicRating":null,"spRating":null,"aum":9999000000,"dailyFactor":0.03,"nav":1,"shadowNav":1,"netFlows":99990000,"moodyRating":null,"yld1Day":0.005,"yld7Day":0.005,"yld30Day":0.005,"liquidity1Day":0.123456,"liquidity7Day":0.256789,"stale":true,"dtEffective":"2017-07-13T04:00:00.000+0000","priceStale":true,"priceDtEffective":"2017-07-13T04:00:00.000+0000"},"supportTradeWindows":false,"subCutoffTime":"2018-09-27T21:00:00.000+0000","subCutoffTimeType":"Y","redCutoffTime":"2018-09-27T21:00:00.000+0000","redCutoffTimeType":"N","taxable":true,"earlyCloseOrHoliday":false,"redemptionFeeInEffect":false,"redemptionGate":false,"subscriptionGate":false},"balance":{"stale":true,"accruedAmt":0,"balanceAmt":0,"balanceAmtUSDE":0,"estimatedMarketValue":0,"estimatedMarketValueUSDE":0,"shares":0,"value":0,"percentageOwned":0,"balanceDt":"Tue Mar 20 2018 00:00:00 GMT-0400","fxRateDTO":{"usdMid":1,"stale":null,"effectiveDate":"2018-03-20T04:00:00.000+0000"}},"accounts":[{"id":"RnVuZEFjY291bnQ6eyJmdW5kSWQiOjMwMjYsImludkFjY291bnRJZCI6ODIxNn0=","account":{"name":"Account1","division":null,"client":null,"executePermission":"EXEC","tradeInstitution":{"location":{"name":"bos"},"institution":{"name":"democorp"}}},"balance":{"accruedAmt":0,"balanceDt":"2018-03-20T04:00:00.000+0000","balanceAmt":0,"balanceAmtUSDE":0,"estimatedMarketValue":0,"estimatedMarketValueUSDE":0,"shares":0,"currencyCode":"USD","value":0,"percentageOwned":0,"stale":true,"fxRateDTO":{"usdMid":1,"stale":null,"effectiveDate":"2018-03-20T04:00:00.000+0000"}},"fund":{"sedol":null,"id":"RnVuZDozMDI2","fundType":"SHORT_TERM","provider":{"name":"2.9 FundsSSS"},"name":"ABC Fed MMF Share Class CC","longName":"ABC Fed MMF Share Class CC","fundCategory":{"name":"TAX EXEMPT"},"fundSubCategory":{"name":"COMMERCE"},"currency":{"currencyCode":"USD"},"domicileCountry":{"name":"Luxembourg"},"autoSettlementModel":"REGISTERED","settlementPeriod":0,"contactName":"Suneetha","contactPhone":"61-666-4444","cusip":null,"isin":"SDD333XXDD33","iso":"RYUVPFRJI","fundId":"3026","ticker":"454545","otherFundCode":null,"overrideSettlementDate":false,"supportedRedemptionFeeTypes":null,"expenseRatio":0.25,"fundWholeHoliday":false,"statistics":{"wam":30,"fitchRating":null,"naicRating":null,"spRating":null,"aum":9999000000,"dailyFactor":0.03,"nav":1,"shadowNav":1,"netFlows":99990000,"moodyRating":null,"yld1Day":0.005,"yld7Day":0.005,"yld30Day":0.005,"liquidity1Day":0.123456,"liquidity7Day":0.256789,"stale":true,"dtEffective":"2017-07-13T04:00:00.000+0000","priceStale":true,"priceDtEffective":"2017-07-13T04:00:00.000+0000"},"supportTradeWindows":false,"subCutoffTime":"2018-09-27T21:00:00.000+0000","subCutoffTimeType":"Y","redCutoffTime":"2018-09-27T21:00:00.000+0000","redCutoffTimeType":"N","taxable":true,"earlyCloseOrHoliday":false,"redemptionFeeInEffect":false,"redemptionGate":false,"subscriptionGate":false},"tradeWindows":null,"tradeDate":"2018-09-27","cashSettlementInstructions":{"disabled":false,"id":"403","name":"Bank Of America Clearing Division 111 (DEFAULT)","isDefault":true,"selectable":true},"custodySettlementInstructions":{"disabled":false,"id":"1151","name":"000000000000000000000000_X>CDLDLDLDLDLDL33333 (MULTI) (DEFAULT)","isDefault":true,"selectable":true}},{"id":"RnVuZEFjY291bnQ6eyJmdW5kSWQiOjMwMjYsImludkFjY291bnRJZCI6NTcxNDIxfQ==","account":{"name":"NEWNEWNEW","division":{"name":"division3"},"client":null,"executePermission":"EXEC","tradeInstitution":{"location":{"name":"bos"},"institution":{"name":"democorp"}}},"balance":{"accruedAmt":0,"balanceDt":"2018-03-20T04:00:00.000+0000","balanceAmt":0,"balanceAmtUSDE":0,"estimatedMarketValue":0,"estimatedMarketValueUSDE":0,"shares":0,"currencyCode":"USD","value":0,"percentageOwned":0,"stale":true,"fxRateDTO":{"usdMid":1,"stale":null,"effectiveDate":"2018-03-20T04:00:00.000+0000"}},"fund":{"sedol":null,"id":"RnVuZDozMDI2","fundType":"SHORT_TERM","provider":{"name":"2.9 FundsSSS"},"name":"ABC Fed MMF Share Class CC","longName":"ABC Fed MMF Share Class CC","fundCategory":{"name":"TAX EXEMPT"},"fundSubCategory":{"name":"COMMERCE"},"currency":{"currencyCode":"USD"},"domicileCountry":{"name":"Luxembourg"},"autoSettlementModel":"REGISTERED","settlementPeriod":0,"contactName":"Suneetha","contactPhone":"61-666-4444","cusip":null,"isin":"SDD333XXDD33","iso":"RYUVPFRJI","fundId":"3026","ticker":"454545","otherFundCode":null,"overrideSettlementDate":false,"supportedRedemptionFeeTypes":null,"expenseRatio":0.25,"fundWholeHoliday":false,"statistics":{"wam":30,"fitchRating":null,"naicRating":null,"spRating":null,"aum":9999000000,"dailyFactor":0.03,"nav":1,"shadowNav":1,"netFlows":99990000,"moodyRating":null,"yld1Day":0.005,"yld7Day":0.005,"yld30Day":0.005,"liquidity1Day":0.123456,"liquidity7Day":0.256789,"stale":true,"dtEffective":"2017-07-13T04:00:00.000+0000","priceStale":true,"priceDtEffective":"2017-07-13T04:00:00.000+0000"},"supportTradeWindows":false,"subCutoffTime":"2018-09-27T21:00:00.000+0000","subCutoffTimeType":"Y","redCutoffTime":"2018-09-27T21:00:00.000+0000","redCutoffTimeType":"N","taxable":true,"earlyCloseOrHoliday":false,"redemptionFeeInEffect":false,"redemptionGate":false,"subscriptionGate":false},"tradeWindows":null,"tradeDate":"2018-09-27","cashSettlementInstructions":{"disabled":false,"id":"1164","name":"LLLLLLLLLLLLLL))03030300333 (MULTI) (DEFAULT)","isDefault":true,"selectable":true},"custodySettlementInstructions":{"disabled":false,"id":"1151","name":"000000000000000000000000_X>CDLDLDLDLDLDL33333 (MULTI) (DEFAULT)","isDefault":true,"selectable":true}},{"id":"RnVuZEFjY291bnQ6eyJmdW5kSWQiOjMwMjYsImludkFjY291bnRJZCI6ODUxNn0=","account":{"name":"ABC Accont","division":null,"client":null,"executePermission":null,"tradeInstitution":{"location":{"name":"bos"},"institution":{"name":"democorp"}}},"balance":{"accruedAmt":0,"balanceDt":"2018-03-20T04:00:00.000+0000","balanceAmt":0,"balanceAmtUSDE":0,"estimatedMarketValue":0,"estimatedMarketValueUSDE":0,"shares":0,"currencyCode":"USD","value":0,"percentageOwned":0,"stale":true,"fxRateDTO":{"usdMid":1,"stale":null,"effectiveDate":"2018-03-20T04:00:00.000+0000"}},"fund":{"sedol":null,"id":"RnVuZDozMDI2","fundType":"SHORT_TERM","provider":{"name":"2.9 FundsSSS"},"name":"ABC Fed MMF Share Class CC","longName":"ABC Fed MMF Share Class CC","fundCategory":{"name":"TAX EXEMPT"},"fundSubCategory":{"name":"COMMERCE"},"currency":{"currencyCode":"USD"},"domicileCountry":{"name":"Luxembourg"},"autoSettlementModel":"REGISTERED","settlementPeriod":0,"contactName":"Suneetha","contactPhone":"61-666-4444","cusip":null,"isin":"SDD333XXDD33","iso":"RYUVPFRJI","fundId":"3026","ticker":"454545","otherFundCode":null,"overrideSettlementDate":false,"supportedRedemptionFeeTypes":null,"expenseRatio":0.25,"fundWholeHoliday":false,"statistics":{"wam":30,"fitchRating":null,"naicRating":null,"spRating":null,"aum":9999000000,"dailyFactor":0.03,"nav":1,"shadowNav":1,"netFlows":99990000,"moodyRating":null,"yld1Day":0.005,"yld7Day":0.005,"yld30Day":0.005,"liquidity1Day":0.123456,"liquidity7Day":0.256789,"stale":true,"dtEffective":"2017-07-13T04:00:00.000+0000","priceStale":true,"priceDtEffective":"2017-07-13T04:00:00.000+0000"},"supportTradeWindows":false,"subCutoffTime":"2018-09-27T21:00:00.000+0000","subCutoffTimeType":"Y","redCutoffTime":"2018-09-27T21:00:00.000+0000","redCutoffTimeType":"N","taxable":true,"earlyCloseOrHoliday":false,"redemptionFeeInEffect":false,"redemptionGate":false,"subscriptionGate":false},"tradeWindows":null,"tradeDate":"2018-09-27","cashSettlementInstructions":{"disabled":false,"id":"-99","name":"NONE","isDefault":false,"selectable":true},"custodySettlementInstructions":{"disabled":false,"id":"-99","name":"NONE","isDefault":false,"selectable":true}}],"tradeWindows":[],"_id":"record-2"}]}
+import React, { Fragment } from 'react'
+import PropTypes from 'prop-types'
+import { Field } from 'redux-form'
+import _ from 'lodash'
+import moment from 'moment'
+import cx from 'classnames'
+import { Icon } from '@fc/react-playbook'
 
-response---{"enterOrders":{"id":"T3JkZXJSZXNwb25zZXM6ZmQwYWNiNDItYjhjYy00MGI2LWE4MjMtOTQ1OGJmYTkyMTY0","tradeValidationSummaryMessages":["Audit calculations could not be performed due to stale or insufficient data."],"orderResponsesId":"fd0acb42-b8cc-40b6-a823-9458bfa92164","orderResponses":[{"id":"T3JkZXJSZXNwb25zZTpiYmQ3ZjQ0NS05OWIxLTRjOTUtYTMwOC05YjMzMDljZGNmNWQ=","orderResponseId":"bbd7f445-99b1-4c95-a308-9b3309cdcf5d","orderRequest":{"overriddenSettlementPeriod":null,"id":"T3JkZXJSZXF1ZXN0OmUwMWI1N2RmLWJhN2YtNGU1NS05MzcyLTgxNjQwOGMwZGVmZg==","side":"BUY","qtyType":"CURRENCY","quantity":22222,"tradeDate":"2018-09-27","redemptionFeeType":null,"fundAccountId":"RnVuZEFjY291bnQ6eyJmdW5kSWQiOjkxNiwiaW52QWNjb3VudElkIjo4MjE2fQ==","userTradeWindowId":-1,"investorCashSettlementInstruction":null,"investorCustodySettlementInstruction":null,"investorPaymentInstruction":null,"comments":null,"approvalMessage":null},"tradeInputValidationErrors":[],"tradeBusinessRulesValidationErrors":[{"errorCode":"4","errorMessage":"Incomplete Audit","errorLevel":"WARNING"}],"tradeComplianceRulesValidationErrors":[]}]}}
+import OrdersValidationFactory from './OrdersValidationFactory'
+import { getLongAccount } from '../../utils/Stringify'
+// import CurrencyRenderer from '../../renderers/CurrencyRenderer'
+import TimeFormatter from '../TimeFormatter/TimeFormatter'
+import s from './Order.scss'
+import ValueField from '../ValueField'
 
+const generateValidationDetailsIndex = index => index
+const getValidationDetails = values => {
+  const validations = new OrdersValidationFactory(values)
+  const validationDetails = validations.getAllValidationsForGridView()
+  return (
+    <div>
+      {validationDetails.map((error, index) => (
+        <div key={generateValidationDetailsIndex(index)}>
+          <Icon name={error.iconClass} className={cx(s.warning)} />
+          {error.message}{' '}
+        </div>
+      ))}
+    </div>
+  )
+}
 
-----> seleceted {"selected":[{"fund":{"sedol":null,"id":"RnVuZDozMDI2","fundType":"SHORT_TERM","provider":{"name":"2.9 FundsSSS"},"name":"ABC Fed MMF Share Class CC","longName":"ABC Fed MMF Share Class CC","fundCategory":{"name":"TAX EXEMPT"},"fundSubCategory":{"name":"COMMERCE"},"currency":{"currencyCode":"USD"},"domicileCountry":{"name":"Luxembourg"},"autoSettlementModel":"REGISTERED","settlementPeriod":0,"contactName":"Suneetha","contactPhone":"61-666-4444","cusip":null,"isin":"SDD333XXDD33","iso":"RYUVPFRJI","fundId":"3026","ticker":"454545","otherFundCode":null,"overrideSettlementDate":false,"supportedRedemptionFeeTypes":null,"expenseRatio":0.25,"fundWholeHoliday":false,"statistics":{"wam":30,"fitchRating":null,"naicRating":null,"spRating":null,"aum":9999000000,"dailyFactor":0.03,"nav":1,"shadowNav":1,"netFlows":99990000,"moodyRating":null,"yld1Day":0.005,"yld7Day":0.005,"yld30Day":0.005,"liquidity1Day":0.123456,"liquidity7Day":0.256789,"stale":true,"dtEffective":"2017-07-13T04:00:00.000+0000","priceStale":true,"priceDtEffective":"2017-07-13T04:00:00.000+0000"},"supportTradeWindows":false,"subCutoffTime":"2018-09-27T21:00:00.000+0000","subCutoffTimeType":"Y","redCutoffTime":"2018-09-27T21:00:00.000+0000","redCutoffTimeType":"N","taxable":true,"earlyCloseOrHoliday":false,"redemptionFeeInEffect":false,"redemptionGate":false,"subscriptionGate":false},"balance":{"stale":true,"accruedAmt":0,"balanceAmt":0,"balanceAmtUSDE":0,"estimatedMarketValue":0,"estimatedMarketValueUSDE":0,"shares":0,"value":0,"percentageOwned":0,"balanceDt":"Tue Mar 20 2018 00:00:00 GMT-0400","fxRateDTO":{"usdMid":1,"stale":null,"effectiveDate":"2018-03-20T04:00:00.000+0000"}},"accounts":[{"id":"RnVuZEFjY291bnQ6eyJmdW5kSWQiOjMwMjYsImludkFjY291bnRJZCI6ODIxNn0=","account":{"name":"Account1","division":null,"client":null,"executePermission":"EXEC","tradeInstitution":{"location":{"name":"bos"},"institution":{"name":"democorp"}}},"balance":{"accruedAmt":0,"balanceDt":"2018-03-20T04:00:00.000+0000","balanceAmt":0,"balanceAmtUSDE":0,"estimatedMarketValue":0,"estimatedMarketValueUSDE":0,"shares":0,"currencyCode":"USD","value":0,"percentageOwned":0,"stale":true,"fxRateDTO":{"usdMid":1,"stale":null,"effectiveDate":"2018-03-20T04:00:00.000+0000"}},"fund":{"sedol":null,"id":"RnVuZDozMDI2","fundType":"SHORT_TERM","provider":{"name":"2.9 FundsSSS"},"name":"ABC Fed MMF Share Class CC","longName":"ABC Fed MMF Share Class CC","fundCategory":{"name":"TAX EXEMPT"},"fundSubCategory":{"name":"COMMERCE"},"currency":{"currencyCode":"USD"},"domicileCountry":{"name":"Luxembourg"},"autoSettlementModel":"REGISTERED","settlementPeriod":0,"contactName":"Suneetha","contactPhone":"61-666-4444","cusip":null,"isin":"SDD333XXDD33","iso":"RYUVPFRJI","fundId":"3026","ticker":"454545","otherFundCode":null,"overrideSettlementDate":false,"supportedRedemptionFeeTypes":null,"expenseRatio":0.25,"fundWholeHoliday":false,"statistics":{"wam":30,"fitchRating":null,"naicRating":null,"spRating":null,"aum":9999000000,"dailyFactor":0.03,"nav":1,"shadowNav":1,"netFlows":99990000,"moodyRating":null,"yld1Day":0.005,"yld7Day":0.005,"yld30Day":0.005,"liquidity1Day":0.123456,"liquidity7Day":0.256789,"stale":true,"dtEffective":"2017-07-13T04:00:00.000+0000","priceStale":true,"priceDtEffective":"2017-07-13T04:00:00.000+0000"},"supportTradeWindows":false,"subCutoffTime":"2018-09-27T21:00:00.000+0000","subCutoffTimeType":"Y","redCutoffTime":"2018-09-27T21:00:00.000+0000","redCutoffTimeType":"N","taxable":true,"earlyCloseOrHoliday":false,"redemptionFeeInEffect":false,"redemptionGate":false,"subscriptionGate":false},"tradeWindows":null,"quantityType":{"value":"CURRENCY","label":"CURRENCY"},"tradeDate":"2018-09-27","cashSettlementInstructions":{"disabled":false,"id":"403","name":"Bank Of America Clearing Division 111 (DEFAULT)","isDefault":true,"selectable":true},"custodySettlementInstructions":{"disabled":false,"id":"1151","name":"000000000000000000000000_X>CDLDLDLDLDLDL33333 (MULTI) (DEFAULT)","isDefault":true,"selectable":true},"selected":true,"orderSide":{"value":1,"label":"Buy"},"amount":"2222"},{"id":"RnVuZEFjY291bnQ6eyJmdW5kSWQiOjMwMjYsImludkFjY291bnRJZCI6NTcxNDIxfQ==","account":{"name":"NEWNEWNEW","division":{"name":"division3"},"client":null,"executePermission":"EXEC","tradeInstitution":{"location":{"name":"bos"},"institution":{"name":"democorp"}}},"balance":{"accruedAmt":0,"balanceDt":"2018-03-20T04:00:00.000+0000","balanceAmt":0,"balanceAmtUSDE":0,"estimatedMarketValue":0,"estimatedMarketValueUSDE":0,"shares":0,"currencyCode":"USD","value":0,"percentageOwned":0,"stale":true,"fxRateDTO":{"usdMid":1,"stale":null,"effectiveDate":"2018-03-20T04:00:00.000+0000"}},"fund":{"sedol":null,"id":"RnVuZDozMDI2","fundType":"SHORT_TERM","provider":{"name":"2.9 FundsSSS"},"name":"ABC Fed MMF Share Class CC","longName":"ABC Fed MMF Share Class CC","fundCategory":{"name":"TAX EXEMPT"},"fundSubCategory":{"name":"COMMERCE"},"currency":{"currencyCode":"USD"},"domicileCountry":{"name":"Luxembourg"},"autoSettlementModel":"REGISTERED","settlementPeriod":0,"contactName":"Suneetha","contactPhone":"61-666-4444","cusip":null,"isin":"SDD333XXDD33","iso":"RYUVPFRJI","fundId":"3026","ticker":"454545","otherFundCode":null,"overrideSettlementDate":false,"supportedRedemptionFeeTypes":null,"expenseRatio":0.25,"fundWholeHoliday":false,"statistics":{"wam":30,"fitchRating":null,"naicRating":null,"spRating":null,"aum":9999000000,"dailyFactor":0.03,"nav":1,"shadowNav":1,"netFlows":99990000,"moodyRating":null,"yld1Day":0.005,"yld7Day":0.005,"yld30Day":0.005,"liquidity1Day":0.123456,"liquidity7Day":0.256789,"stale":true,"dtEffective":"2017-07-13T04:00:00.000+0000","priceStale":true,"priceDtEffective":"2017-07-13T04:00:00.000+0000"},"supportTradeWindows":false,"subCutoffTime":"2018-09-27T21:00:00.000+0000","subCutoffTimeType":"Y","redCutoffTime":"2018-09-27T21:00:00.000+0000","redCutoffTimeType":"N","taxable":true,"earlyCloseOrHoliday":false,"redemptionFeeInEffect":false,"redemptionGate":false,"subscriptionGate":false},"tradeWindows":null,"quantityType":{"value":"CURRENCY","label":"CURRENCY"},"tradeDate":"2018-09-27","cashSettlementInstructions":{"disabled":false,"id":"1164","name":"LLLLLLLLLLLLLL))03030300333 (MULTI) (DEFAULT)","isDefault":true,"selectable":true},"custodySettlementInstructions":{"disabled":false,"id":"1151","name":"000000000000000000000000_X>CDLDLDLDLDLDL33333 (MULTI) (DEFAULT)","isDefault":true,"selectable":true},"selected":true,"orderSide":{"value":1,"label":"Buy"},"amount":"44444"},{"id":"RnVuZEFjY291bnQ6eyJmdW5kSWQiOjMwMjYsImludkFjY291bnRJZCI6ODUxNn0=","account":{"name":"ABC Accont","division":null,"client":null,"executePermission":null,"tradeInstitution":{"location":{"name":"bos"},"institution":{"name":"democorp"}}},"balance":{"accruedAmt":0,"balanceDt":"2018-03-20T04:00:00.000+0000","balanceAmt":0,"balanceAmtUSDE":0,"estimatedMarketValue":0,"estimatedMarketValueUSDE":0,"shares":0,"currencyCode":"USD","value":0,"percentageOwned":0,"stale":true,"fxRateDTO":{"usdMid":1,"stale":null,"effectiveDate":"2018-03-20T04:00:00.000+0000"}},"fund":{"sedol":null,"id":"RnVuZDozMDI2","fundType":"SHORT_TERM","provider":{"name":"2.9 FundsSSS"},"name":"ABC Fed MMF Share Class CC","longName":"ABC Fed MMF Share Class CC","fundCategory":{"name":"TAX EXEMPT"},"fundSubCategory":{"name":"COMMERCE"},"currency":{"currencyCode":"USD"},"domicileCountry":{"name":"Luxembourg"},"autoSettlementModel":"REGISTERED","settlementPeriod":0,"contactName":"Suneetha","contactPhone":"61-666-4444","cusip":null,"isin":"SDD333XXDD33","iso":"RYUVPFRJI","fundId":"3026","ticker":"454545","otherFundCode":null,"overrideSettlementDate":false,"supportedRedemptionFeeTypes":null,"expenseRatio":0.25,"fundWholeHoliday":false,"statistics":{"wam":30,"fitchRating":null,"naicRating":null,"spRating":null,"aum":9999000000,"dailyFactor":0.03,"nav":1,"shadowNav":1,"netFlows":99990000,"moodyRating":null,"yld1Day":0.005,"yld7Day":0.005,"yld30Day":0.005,"liquidity1Day":0.123456,"liquidity7Day":0.256789,"stale":true,"dtEffective":"2017-07-13T04:00:00.000+0000","priceStale":true,"priceDtEffective":"2017-07-13T04:00:00.000+0000"},"supportTradeWindows":false,"subCutoffTime":"2018-09-27T21:00:00.000+0000","subCutoffTimeType":"Y","redCutoffTime":"2018-09-27T21:00:00.000+0000","redCutoffTimeType":"N","taxable":true,"earlyCloseOrHoliday":false,"redemptionFeeInEffect":false,"redemptionGate":false,"subscriptionGate":false},"tradeWindows":null,"tradeDate":"2018-09-27","cashSettlementInstructions":{"disabled":false,"id":"-99","name":"NONE","isDefault":false,"selectable":true},"custodySettlementInstructions":{"disabled":false,"id":"-99","name":"NONE","isDefault":false,"selectable":true}}],"tradeWindows":[],"_id":"record-2"}]}
-----> response {"enterOrders":{"id":"T3JkZXJSZXNwb25zZXM6Y2YzYmY5YWItNWJiOC00OTVlLWE2NzEtOTY0MWYyZWQ0MzFk","tradeValidationSummaryMessages":["Audit calculations could not be performed due to stale or insufficient data."],"orderResponsesId":"cf3bf9ab-5bb8-495e-a671-9641f2ed431d","orderResponses":[{"id":"T3JkZXJSZXNwb25zZTpmZTBhYzk2My1hMDZmLTRjZGEtYjBhZS02YjhkNGNhNDVkMjg=","orderResponseId":"fe0ac963-a06f-4cda-b0ae-6b8d4ca45d28","orderRequest":{"overriddenSettlementPeriod":null,"id":"T3JkZXJSZXF1ZXN0OjFkOTVjMWJlLWM3OTgtNGY1NS1hYjVmLTYzNTViNGYyNzUyYQ==","side":"BUY","qtyType":"CURRENCY","quantity":2222,"tradeDate":"2018-09-27","redemptionFeeType":null,"fundAccountId":"RnVuZEFjY291bnQ6eyJmdW5kSWQiOjMwMjYsImludkFjY291bnRJZCI6ODIxNn0=","userTradeWindowId":-1,"investorCashSettlementInstruction":403,"investorCustodySettlementInstruction":1151,"investorPaymentInstruction":null,"comments":null,"approvalMessage":null},"tradeInputValidationErrors":[],"tradeBusinessRulesValidationErrors":[{"errorCode":"4","errorMessage":"Incomplete Audit","errorLevel":"WARNING"}],"tradeComplianceRulesValidationErrors":[]},{"id":"T3JkZXJSZXNwb25zZTo2ODYwOWM4ZS0zZjI4LTQ4NDItYmYzMy0xYjM1ZTgwNDY1NzY=","orderResponseId":"68609c8e-3f28-4842-bf33-1b35e8046576","orderRequest":{"overriddenSettlementPeriod":null,"id":"T3JkZXJSZXF1ZXN0OmFlN2NlMWMyLTI1NDQtNDQ5My04OWJhLTQwZjRhMTE0YTYzNg==","side":"BUY","qtyType":"CURRENCY","quantity":44444,"tradeDate":"2018-09-27","redemptionFeeType":null,"fundAccountId":"RnVuZEFjY291bnQ6eyJmdW5kSWQiOjMwMjYsImludkFjY291bnRJZCI6NTcxNDIxfQ==","userTradeWindowId":-1,"investorCashSettlementInstruction":1164,"investorCustodySettlementInstruction":1151,"investorPaymentInstruction":null,"comments":null,"approvalMessage":null},"tradeInputValidationErrors":[],"tradeBusinessRulesValidationErrors":[{"errorCode":"4","errorMessage":"Incomplete Audit","errorLevel":"WARNING"}],"tradeComplianceRulesValidationErrors":[]}]}}
+const formatSelectedTradeWindowDisplayText = (entity, timeZone) => {
+  const {
+    label,
+    redEndTime,
+    subEndTime,
+    redemptionSettlementPeriod,
+    subscriptionSettlementPeriod,
+  } = entity.tradeWindow
+
+  const tz = moment.tz(timeZone).zoneAbbr()
+  return label ? (
+    <span style={{ fontWeight: 400 }}>{label}</span>
+  ) : (
+    <Fragment>
+      <span style={{ fontWeight: 400 }}>Window Cutoff </span>
+      <span style={{ paddingRight: '5px' }}>
+        ({tz}
+        ):
+      </span>
+      <span>Buy:</span>
+      <TimeFormatter time={subEndTime} showTimeZone={false} />
+      <span style={{ paddingLeft: '5px', paddingRight: '5px' }}> | </span>
+      <span>Sell:</span>
+      <TimeFormatter time={redEndTime} showTimeZone={false} />
+      <br />
+      <span style={{ paddingRight: '23px' }}>Settlement Period: </span>
+      <span style={{ paddingRight: '5px' }}>
+        (T+
+        {subscriptionSettlementPeriod})
+      </span>
+      <span style={{ paddingLeft: '27px', paddingRight: '5px' }}> | </span>
+      <span>
+        (T+
+        {redemptionSettlementPeriod})
+      </span>
+    </Fragment>
+  )
+}
+
+const order = props => {
+  const { fundAccount } = props.orderRequest
+  const selectedAccountEntity = props.orderRequest.fundAccount
+  const showValidations =
+    props.orderRequest.tradeBusinessRulesValidationErrors.length ||
+    props.orderRequest.tradeComplianceRulesValidationErrors.length
+  // || props.orderRequest.tradeInputValidationErrors.length
+  console.log('~~~~~ fundAccount ', fundAccount)
+  console.log('>>>>>>>>> props fundName ', props.fundName)
+  console.log('>>>>>>>>> props selectedAccountEntity ', selectedAccountEntity)
+
+  return (
+    <div className={s.confirmOrderWrap}>
+      <div className={s.form}>
+        <div className={s.column}>
+          {props.fundName ? <div className={s.fund}>{props.fundName}</div> : ''}
+          <div className={cx(s.row, s.accountInfo)}>
+            <Field
+              name="account"
+              props={{
+                formGroupClassName: s.account,
+                inline: true,
+                showDelimiter: true,
+                label: 'Account',
+                renderer: () => (
+                  <div>
+                    {getLongAccount(
+                      _.get(selectedAccountEntity, 'account.name'),
+                    )}
+                  </div>
+                ),
+              }}
+              component={ValueField}
+            />
+            <Field
+              props={{
+                formGroupClassName: s.currencyField,
+                inline: true,
+                showDelimiter: true,
+                label: 'Market Value',
+                renderer: () => (
+                  <div>
+                    {_.get(selectedAccountEntity, 'balance.balanceAmt')}
+                  </div>
+                ),
+              }}
+              name="Market Value"
+              component={ValueField}
+            />
+
+            <Field
+              props={{
+                formGroupClassName: s.numericField,
+                inline: true,
+                showDelimiter: true,
+                label: 'Total Share',
+                renderer: () => (
+                  <div>{_.get(selectedAccountEntity, 'balance.shares')}</div>
+                ),
+              }}
+              name="Total Share"
+              component={ValueField}
+            />
+            <Field
+              props={{
+                formGroupClassName: s.currencyField,
+                inline: true,
+                showDelimiter: true,
+                label: 'Est. Market Value',
+                renderer: () => (
+                  <div>
+                    {_.get(selectedAccountEntity, 'balance.balanceAmt')}
+                  </div>
+                ),
+              }}
+              component={ValueField}
+              name="Est. Market Value"
+            />
+            <Field
+              props={{
+                formGroupClassName: s.numericField,
+                inline: true,
+                showDelimiter: true,
+                label: 'Est. Share',
+              }}
+              name={_.get(selectedAccountEntity, 'estimatedShare')}
+              component={ValueField}
+            />
+            <Field
+              props={{
+                formGroupClassName: s.percentageField,
+                inline: true,
+                showDelimiter: true,
+                label: 'Fund % Owned',
+                renderer: ({ val }) => (val ? `${val}%` : ''),
+              }}
+              name={_.get(selectedAccountEntity, 'fundPercentOwned')}
+              component={ValueField}
+            />
+            <Field
+              props={{
+                formGroupClassName: s.currencyField,
+                inline: true,
+                showDelimiter: true,
+                label: 'Est. Total Market Value',
+                renderer: ({ val }) => (val ? `$${val}` : ''),
+              }}
+              name={_.get(selectedAccountEntity, 'estimatedTotalMarketValue')}
+              component={ValueField}
+            />
+            <Field
+              props={{
+                formGroupClassName: s.numericField,
+                inline: true,
+                showDelimiter: true,
+                label: 'Est. Total Share',
+              }}
+              name={_.get(selectedAccountEntity, 'estimatedTotalShare')}
+              component={ValueField}
+            />
+          </div>
+          <div className={cx(s.row, s.accountInfo)}>
+            <Field
+              name="side"
+              props={{
+                formGroupClassName: s.account,
+                inline: true,
+                showDelimiter: true,
+                label: 'Order Side',
+                renderer: () => <div>{props.orderRequest.side}</div>,
+              }}
+              component={ValueField}
+            />
+            {props.orderRequest.redemptionFeeType ? (
+              <Field
+                name="redemptionFeeType"
+                props={{
+                  formGroupClassName: s.account,
+                  inline: true,
+                  showDelimiter: true,
+                  label: 'Redemption Type',
+                  renderer: () => (
+                    <div>{props.orderRequest.redemptionFeeType}</div>
+                  ),
+                }}
+                component={ValueField}
+              />
+            ) : (
+              ''
+            )}
+            <Field
+              name="qtyType"
+              props={{
+                formGroupClassName: s.account,
+                inline: true,
+                showDelimiter: true,
+                label: 'Quantity Type',
+                renderer: () => <div>{props.orderRequest.qtyType}</div>,
+              }}
+              component={ValueField}
+            />
+            <Field
+              name="quantity"
+              props={{
+                formGroupClassName: s.account,
+                inline: true,
+                showDelimiter: true,
+                label: 'Amount',
+                renderer: () => <div>{props.orderRequest.quantity}</div>,
+              }}
+              component={ValueField}
+            />
+            {_.get(selectedAccountEntity, 'settlementDate') ? (
+              <Field
+                name="settlementDate"
+                props={{
+                  formGroupClassName: s.account,
+                  inline: true,
+                  showDelimiter: true,
+                  label: 'Settlement Date',
+                  renderer: () => (
+                    <div>
+                      {_.get(selectedAccountEntity, 'settlementDate.name')}
+                    </div>
+                  ),
+                }}
+                component={ValueField}
+              />
+            ) : (
+              ''
+            )}
+            <Field
+              name="tradeDate"
+              props={{
+                formGroupClassName: s.account,
+                inline: true,
+                showDelimiter: true,
+                label: 'Trade Date',
+                renderer: () => (
+                  <div>{_.get(selectedAccountEntity, 'tradeDate')}</div>
+                ),
+              }}
+              component={ValueField}
+            />
+
+            {showValidations ? (
+              <Field
+                name="validations"
+                props={{
+                  formGroupClassName: s.account,
+                  inline: true,
+                  showDelimiter: true,
+                  label: 'Validations',
+                  renderer: () => (
+                    <div>{getValidationDetails(props.orderRequest)}</div>
+                  ),
+                }}
+                component={ValueField}
+              />
+            ) : (
+              ''
+            )}
+          </div>
+          {selectedAccountEntity.tradeWindow ? (
+            <div className={s.row}>
+              <Field
+                props={{
+                  formGroupClassName: s.settlementFields,
+                  inline: true,
+                  showDelimiter: true,
+                  label: 'Trade Window',
+                  renderer: () => (
+                    <div>
+                      {formatSelectedTradeWindowDisplayText(
+                        selectedAccountEntity,
+                        'EDT',
+                      )}
+                    </div>
+                  ),
+                }}
+                name="tradeWindow"
+                component={ValueField}
+              />
+            </div>
+          ) : (
+            ''
+          )}
+
+          {props.orderRequest.investorCashSettlementInstruction ||
+          props.orderRequest.investorCustodySettlementInstruction ? (
+            <div className={cx(s.row, s.spaceBetween)}>
+              {props.orderRequest.investorCashSettlementInstruction ? (
+                <Field
+                  props={{
+                    formGroupClassName: s.settlementFields,
+                    inline: true,
+                    showDelimiter: true,
+                    label: 'Cash Settlement Instructions',
+                    renderer: () => (
+                      <div>
+                        <div>
+                          {_.get(
+                            selectedAccountEntity,
+                            'cashSettlementInstructions.name',
+                          )}
+                        </div>
+                        <div
+                          style={{
+                            textIndent: '15px',
+                            backgroundColor: '#FFFFF0',
+                            color: '#696969',
+                          }}
+                        >
+                          <div>
+                            <b>SSI Custodian Name:</b>
+                            &nbsp;ASDFSDDS
+                          </div>
+                          <div>
+                            <b>SSI Custodian Account:</b>
+                            &nbsp;GGGG
+                          </div>
+                          <div>
+                            <b>SSI Custodian BIC:</b>
+                            &nbsp;DDDDDD66
+                          </div>
+                          <div>
+                            <b>Cash Cutoff Time:</b>
+                            &nbsp;22:00 US/Eastern
+                          </div>
+                        </div>
+                      </div>
+                    ),
+                  }}
+                  name="cashSettlementInstructions"
+                  component={ValueField}
+                />
+              ) : (
+                ''
+              )}
+              {props.orderRequest.investorCustodySettlementInstruction ? (
+                <Field
+                  props={{
+                    formGroupClassName: s.settlementFields,
+                    inline: true,
+                    showDelimiter: true,
+                    label: 'Custody Settlement Instructions',
+                    renderer: () => (
+                      <div>
+                        {_.get(
+                          selectedAccountEntity,
+                          'custodySettlementInstructions.name',
+                        )}
+                      </div>
+                    ),
+                  }}
+                  name="custodySettlementInstructions"
+                  component={ValueField}
+                />
+              ) : (
+                ''
+              )}
+            </div>
+          ) : (
+            ''
+          )}
+          {props.orderRequest.comments || props.orderRequest.approvalMessage ? (
+            <div className={s.row}>
+              {props.orderRequest.comments ? (
+                <Field
+                  props={{
+                    formGroupClassName: s.settlementFields,
+                    inline: true,
+                    showDelimiter: true,
+                    label: 'Comments',
+                    renderer: () => <div>{props.orderRequest.comments}</div>,
+                  }}
+                  name="comments"
+                  component={ValueField}
+                />
+              ) : (
+                ''
+              )}
+
+              {props.orderRequest.approvalMessage ? (
+                <Field
+                  props={{
+                    formGroupClassName: s.settlementFields,
+                    inline: true,
+                    showDelimiter: true,
+                    label: 'Approval Messages',
+                    renderer: () => (
+                      <div>{props.orderRequest.approvalMessage}</div>
+                    ),
+                  }}
+                  name="approvalMessage"
+                  component={ValueField}
+                />
+              ) : (
+                ''
+              )}
+            </div>
+          ) : (
+            ''
+          )}
+        </div>
+      </div>
+    </div>
+  )
+}
+
+order.propTypes = {
+  orderRequest: PropTypes.instanceOf(Object),
+  fundName: PropTypes.string,
+}
+export default order
+-----------------------------------
+import { PRECISION_TYPES } from '../enums'
+import { getStore } from '../store'
+
+const abbreviations = ['', 'K', 'M', 'B', 'T']
+
+const NUM_SIG_FIGS = 3
+
+function getShortenedNum(num, sigFigs) {
+  if (num === 0) return [num, '']
+  const numDigitsToRemove = Math.floor(Math.log10(Math.abs(num)) + 1) - sigFigs
+  const rounded =
+    Math.round(num / 10 ** numDigitsToRemove) * 10 ** numDigitsToRemove
+  const digits = Math.floor(Math.log10(Math.abs(rounded)) + 1)
+  let digitsToRemove = 0
+  while (digits - digitsToRemove > 3) {
+    digitsToRemove += 3
+  }
+  return [rounded / 10 ** digitsToRemove, abbreviations[digitsToRemove / 3]]
+}
+
+export function toCurrencyString(text, currencyCode = 'USD') {
+  const num = text - 0
+  // TBD what we are going to do the whole file
+  // const { precision, numberLocale } = getStore().getState().Settings
+  const precision = PRECISION_TYPES.FULL
+  const numberLocale = 'en-US'
+  const baseOptions = {
+    style: 'currency',
+    currency: currencyCode,
+    currencyDisplay: 'symbol',
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  }
+  if (precision === PRECISION_TYPES.FULL)
+    return num.toLocaleString(numberLocale, baseOptions)
+
+  const [shortenedNum, abbrev] = getShortenedNum(num, NUM_SIG_FIGS)
+  const sigFigOptions = {
+    minimumSignificantDigits: NUM_SIG_FIGS,
+    maximumSignificantDigits: NUM_SIG_FIGS,
+  }
+  const numWithOutAbbrev = shortenedNum.toLocaleString(numberLocale, {
+    ...baseOptions,
+    ...sigFigOptions,
+  })
+  // in european format, currencies are 1.000 $ so we need to add abbrev before space
+  // in america format currencies are $1,000 so we can just add at end
+  // so we search for non breaking space character, and add before if it exists otherwise add at end.
+  const insertIndex = numWithOutAbbrev.indexOf(' ') // this is the nbsp; character! not space!
+  return insertIndex >= 0
+    ? numWithOutAbbrev.replace(' ', `${abbrev} `) // eslint-disable-line no-irregular-whitespace
+    : `${numWithOutAbbrev}${abbrev}` // eslint-disable-line no-irregular-whitespace
+}
+
+export function toLocalCurrencyString(text, fromCurrency) {
+  const num = text - 0
+  const numUSD = num * fromCurrency.rateToUSD
+  const toCurrency = getStore().getState().Settings.localCurrency
+  const translatedNum = numUSD * toCurrency.rateFromUSD
+  return toCurrencyString(translatedNum, toCurrency.code)
+}
+
+export function toNumberString(text) {
+  const num = text - 0
+  const { precision, numberLocale } = getStore().getState().Settings
+  if (precision === PRECISION_TYPES.FULL) {
+    return num.toLocaleString(numberLocale, {
+      maximumFractionDigits: 5,
+    })
+  }
+  const [shortenedNum, abbrev] = getShortenedNum(num, NUM_SIG_FIGS)
+  const options = {
+    minimumSignificantDigits: NUM_SIG_FIGS,
+    maximumSignificantDigits: NUM_SIG_FIGS,
+  }
+  return shortenedNum.toLocaleString(numberLocale, options) + abbrev
+}
+
+export function toPercentString(text) {
+  const baseOptions = {
+    style: 'percent',
+    minimumFractionDigits: 2,
+    maximumSignificantDigits: 5,
+  }
+  const { precision, numberLocale } = getStore().getState().Settings
+  const options =
+    precision === PRECISION_TYPES.ROUND
+      ? {
+          minimumSignificantDigits: NUM_SIG_FIGS,
+          maximumSignificantDigits: NUM_SIG_FIGS,
+        }
+      : {}
+  return (text - 0).toLocaleString(numberLocale, {
+    ...baseOptions,
+    ...options,
+  })
+}
+
+export function getLongAccount({ name, client, division, tradeInstitution }) {
+  const { location, institution } = tradeInstitution
+  return `${location.name}.${institution.name}${
+    division ? `/${division.name}` : ''
+  }${client ? `/${client.name}` : ''}${name ? `/${name}` : ''}`
+}
