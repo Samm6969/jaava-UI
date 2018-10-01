@@ -1,0 +1,141 @@
+import _ from 'lodash'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import {
+  FillContainer,
+  Card,
+  CardHeader,
+  CardContent,
+  CardFooter,
+  Button,
+  Snackbar,
+} from '@fc/react-playbook'
+import { graphql } from 'react-relay'
+import commitMutation from '../../utils/commitMutation'
+import s from './OrderConfirmRoute.scss'
+import OrderList from '../../components/OrderConfirm/OrderList'
+
+class OrderConfirmRoute extends Component {
+  static propTypes = {
+    history: PropTypes.shape({
+      goBack: PropTypes.func.isRequired,
+    }).isRequired,
+  }
+
+  state = {
+    enterOrderPayload: [],
+    selected: [],
+    response: {},
+  }
+
+  static getDerivedStateFromProps(props) {
+    const { location } = props
+    const enterOrderPayload =
+      typeof location.state !== 'undefined' &&
+      typeof location.state.enterOrderPayload !== 'undefined'
+        ? location.state.enterOrderPayload
+        : []
+
+    const selected =
+      typeof location.state !== 'undefined' &&
+      typeof location.state.selected !== 'undefined'
+        ? location.state.selected
+        : []
+
+    const response =
+      typeof location.state !== 'undefined' &&
+      typeof location.state.response !== 'undefined'
+        ? location.state.response
+        : []
+
+    return {
+      enterOrderPayload,
+      selected,
+      response,
+    }
+  }
+
+  handleSubmit = () => {
+    this.confirmCreateOrders()
+  }
+
+  confirmCreateOrders = async () => {
+    const { enterOrderPayload } = this.state
+    const mutation = graphql`
+      mutation OrderConfirmRouteMutation($input: OrderRequestsInput!) {
+        confirmOrders(input: $input) {
+          id
+          orderResponsesId
+        }
+      }
+    `
+    await commitMutation({
+      mutation,
+      variables: {
+        input: {
+          clientMutationId: _.uniqueId('mmf-order-request-confirm'),
+          orderRequests: enterOrderPayload,
+        },
+      },
+      onError: () => {
+        this.setState({
+          snackbar: 'error',
+          message:
+            'Order did not create successfully, please contact administrator.',
+        })
+      },
+      onCompleted: () => {
+        this.setState({
+          snackbar: 'success',
+          message: 'Order has been created successfully.',
+        })
+      },
+    })
+  }
+
+  handleCancel = () => {
+    const { history } = this.props
+    history.goBack()
+  }
+
+  render() {
+    const { snackbar, message, selected, response } = this.state
+    console.log('----> seleceted', selected)
+    console.log('----> response', response)
+    return (
+      <FillContainer>
+        <Card className={s.card}>
+          <CardHeader>Order Confirm</CardHeader>
+          <CardContent style={{ overflow: 'auto' }}>
+            <OrderList
+              orders={response.enterOrders.orderResponses}
+              tradeValidationSummaryMessages={
+                response.enterOrders.tradeValidationSummaryMessages
+              }
+              selectedShortTermFunds={selected}
+            />
+          </CardContent>
+          <CardFooter className={s.footer}>
+            <Button onClick={this.handleCancel}>Cancel</Button>
+            <Button primary type="submit" onClick={this.handleSubmit}>
+              Confirm
+            </Button>
+          </CardFooter>
+        </Card>
+        <Snackbar
+          message={message || ''}
+          alertStyle={snackbar}
+          active={!!snackbar}
+          onDismiss={() => {
+            const { history } = this.props
+            this.setState({ snackbar: null })
+            history.push('/trade/direct/short-term')
+          }}
+          timeout={20000}
+        />
+      </FillContainer>
+    )
+  }
+}
+
+export default OrderConfirmRoute
