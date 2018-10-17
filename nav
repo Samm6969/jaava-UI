@@ -1,3 +1,4 @@
+
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import {
@@ -166,11 +167,7 @@ class AFTOrderEntryForm extends Component {
           { value: 'Fund CCY', label: 'Fund CCY' },
           { value: 'EUR', label: 'EUR' },
         ],
-        C: [
-          { value: 'AAA', label: 'AAA' },
-          { value: 'AED', label: 'AED' },
-          { value: 'USD', label: 'USD' },
-        ],
+        C: [],
       },
       currency: [],
     },
@@ -191,6 +188,20 @@ class AFTOrderEntryForm extends Component {
       selectAll: nextProps.selectAll,
     })
     this.getSelectedOrdersCount(nextProps.orderEntries)
+  }
+
+  static getDerivedStateFromProps(nextProps, prevState) {
+    const { options, options: { currencyByQtyType : { c } }  } = prevState;
+    if (_.isEmpty(c)) {
+      let { currencies } = _.get(nextProps, 'currencies') || [];
+      currencies = currencies.map(cur => ({ value: cur.currencyCode, label: cur.currencyCode }))
+      options.currencyByQtyType.c = currencies;
+      return {
+          ...prevState,
+          options,
+        };
+    }
+    return prevState;
   }
 
   getSelectedOrdersCount = orderEntries => {
@@ -478,136 +489,3 @@ class AFTOrderEntryForm extends Component {
 }
 
 export default AFTOrderEntryFormimport React, { Component } from 'react'
-import PropTypes from 'prop-types'
-
-import { Field } from 'redux-form'
-import { CheckboxField, SelectField, InputField } from '../../fields'
-
-class AFTOrderEntryFormFundGroup extends Component {
-  static propTypes = {
-    fields: PropTypes.shape(PropTypes.object),
-    meta: PropTypes.shape(PropTypes.object),
-    options: PropTypes.shape(PropTypes.object),
-    onQtyTypeChange: PropTypes.func,
-    onOrderSelectionChange: PropTypes.func,
-  }
-
-  getKey = index => index
-
-  getDisplayName = entity => entity.displayName
-
-  required = value =>
-    value || typeof value === 'number' ? undefined : 'Required'
-
-  render() {
-    const isLoading = false
-    const { fields, meta, options, ...rest } = this.props
-    // console.log('>>>>>>>>>>>> fundGroup ', fields, options)
-    return (
-      <div>
-        <div
-          style={{
-            borderTop: '1px solid gray',
-            display: 'flex',
-            justifyContent: 'space-around',
-          }}
-        >
-          {fields.getAll().length === 0 ? (
-            <div>
-              <h5>Please add at least one order entry.</h5>
-            </div>
-          ) : (
-            ''
-          )}
-        </div>
-        {fields.map((member, index) => (
-          <div
-            key={this.getKey(index)}
-            style={{ display: 'flex', marginTop: '1rem' }}
-          >
-            <div style={{ flex: 1, order: 1, width: '3%' }}>
-              <Field
-                name={`${member}.selected`}
-                type="checkbox"
-                onChange={this.props.onOrderSelectionChange}
-                component={CheckboxField}
-              />
-            </div>
-            <div style={{ order: 3, width: '15%' }}>
-              <Field
-                name={`${member}.accounts`}
-                {...rest}
-                options={this.props.options.accounts}
-                placeholder={isLoading ? 'Loading...' : 'All Accounts'}
-                isLoading={isLoading}
-                isClearable
-                component={SelectField}
-              />
-            </div>
-            <div style={{ order: 3, width: '13%' }}>
-              <Field
-                name={`${member}.isin`}
-                placeholder="ISIN"
-                component={InputField}
-                validate={[this.required]}
-              />
-            </div>
-            <div style={{ order: 3, width: '15%' }}>
-              <Field
-                name={`${member}.side`}
-                options={this.props.options.side}
-                placeholder={isLoading ? 'Loading...' : 'Side'}
-                isLoading={isLoading}
-                validate={[this.required]}
-                isClearable
-                component={SelectField}
-              />
-            </div>
-            <div style={{ order: 3, width: '15%' }}>
-              <Field
-                name={`${member}.qtyType`}
-                {...rest}
-                options={this.props.options.qtyType}
-                onChange={this.props.onQtyTypeChange}
-                component={SelectField}
-              />
-            </div>
-            <div style={{ order: 3, width: '14%' }}>
-              <Field
-                name={`${member}.amount`}
-                placeholder="Amount"
-                component={InputField}
-                validate={[this.required]}
-              />
-            </div>
-            <div style={{ order: 3, width: '15%' }}>
-              <Field
-                name={`${member}.currency`}
-                options={this.props.options.currency}
-                component={SelectField}
-                validate={[this.required]}
-              />
-            </div>
-            <div style={{ order: 3, width: '10%' }}>
-              <Field
-                name={`${member}.clientreference`}
-                placeholder="Client Reference"
-                component={InputField}
-              />
-            </div>
-          </div>
-        ))}
-      </div>
-    )
-  }
-}
-export default AFTOrderEntryFormFundGroup
----
-currencies: Array(41)
-0: {currencyId: "211", currencyCode: "AAA", name: "aaa", __typename: "Currency"}
-1: {currencyId: "1", currencyCode: "AED", name: "UAE Dirham", __typename: "Currency"}
-2: {currencyId: "6", currencyCode: "ARS", name: "ARGENTINE'S PESO DIRECT", __typename: "Currency"}
-3: {currencyId: "11", currencyCode: "ATS", name: "Shilling", __typename: "Currency"}
-4: {currencyId: "16", currencyCode: "AUD", name: "AUSSIE DOLLAR", __typename: "Currency"}
-5: {currencyId: "216", currencyCode: "BBB", name: "bbb", __typename: "Currency"}
-6: {currencyId: "26", currencyCode: "BEF", name: "Belgian Franc", __typename: "Currency"}
