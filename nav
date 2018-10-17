@@ -1,0 +1,489 @@
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardContent,
+  CardFooter,
+} from '@fc/react-playbook'
+import Button from '@fc/react-playbook/src/components/Button'
+import gql from 'graphql-tag'
+
+import _ from 'lodash'
+import { connect } from 'react-redux'
+import {
+  Field,
+  FieldArray,
+  reduxForm,
+  formValueSelector,
+  change,
+} from 'redux-form'
+import s from './AFTOrderEntryForm.scss'
+import AFTOrderEntryFormFundGroup from './AFTOrderEntryFormFundGroup'
+import { CheckboxField } from '../../fields'
+import withQuery from '../../hoc/withQuery'
+
+const formAFTOrderEntry = formValueSelector('AFTOrderEntry')
+
+const pages = {
+  AFT_ORDER_ENTRY: 'AFT_ORDER_ENTRY',
+  AFT_ORDER_CONFIRMATION: 'AFT_ORDER_CONFIRMATION',
+}
+
+const query = gql`
+  query ATFOrderEntryFormQuery {
+    currencies {
+      currencyId
+      currencyCode
+      name
+    }
+  }
+`
+
+function mapStateToProps(state) {
+  const orderEntries = [
+    {
+      selected: true,
+      qtyType: { value: 'U', label: 'Units' },
+      currency: { value: 'Fund CCY', label: 'Fund CCY' },
+      accounts: { value: 32214783, label: 'Account 2' },
+      isin: 'jjjnnnn',
+      side: { value: 'S', label: 'Subscription' },
+      amount: '22',
+      clientreference: '222',
+    },
+    {
+      selected: true,
+      qtyType: { value: 'U', label: 'Units' },
+      currency: { value: 'Fund CCY', label: 'Fund CCY' },
+      accounts: { value: 32214782, label: 'Account 1' },
+      isin: 'rwerw',
+      side: { value: 'S', label: 'Subscription' },
+      amount: '444',
+      clientreference: 'ewrwerew',
+    },
+    {
+      selected: true,
+      qtyType: { value: 'C', label: 'Cash' },
+      accounts: { value: 32214783, label: 'Account 2' },
+      isin: '222',
+      side: { value: 'R', label: 'Redemption' },
+      amount: '222',
+      currency: { value: 'AED', label: 'AED' },
+      clientreference: '343242',
+    },
+  ]
+  const selectAll = false
+  const initialValues = {
+    selectAll,
+    orderEntries,
+  }
+  return {
+    initialValues,
+    selectAll: formAFTOrderEntry(state, 'selectAll'),
+    orderEntries: formAFTOrderEntry(state, 'orderEntries'),
+  }
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    // onSubmit(values) {},
+    updateOrderEntriesState(key, val) {
+      dispatch(change('AFTOrderEntry', key, val))
+    },
+    getAllAccounts() {
+      const accounts = []
+      accounts.push({ value: 32214782, label: 'Account 1' })
+      accounts.push({ value: 32214783, label: 'Account 2' })
+      accounts.push({ value: 32214784, label: 'Account 3' })
+      accounts.push({ value: 32214785, label: 'Account 4' })
+      accounts.push({ value: 32214786, label: 'Account 5' })
+      return accounts
+    },
+  }
+}
+const validate = values => {
+  const errors = {}
+  if (!values.orderEntries || !values.orderEntries.length) {
+    errors.orderEntries = { _error: 'At least one order must be selected' }
+  } else {
+    const membersArrayErrors = []
+    errors.orderEntries = { _error: undefined }
+    values.orderEntries.forEach((member, memberIndex) => {
+      const memberErrors = {}
+      if (!member.accounts) {
+        memberErrors.accounts = 'Required'
+        membersArrayErrors[memberIndex] = memberErrors
+      }
+    })
+
+    if (membersArrayErrors.length) {
+      errors.orderEntries = membersArrayErrors
+    }
+  }
+  // console.log('End::::~~~~~~~~~~~~ >>> validate <===> errors ', errors)
+  return errors
+}
+@connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)
+@reduxForm({
+  form: 'AFTOrderEntry',
+  validate,
+})
+@withQuery({
+  query,
+})
+class AFTOrderEntryForm extends Component {
+  static propTypes = {
+    handleSubmit: PropTypes.func,
+    title: PropTypes.string,
+    getAllAccounts: PropTypes.func,
+    updateOrderEntriesState: PropTypes.func,
+    orderEntries: PropTypes.arrayOf(PropTypes.object),
+    selectAll: PropTypes.bool,
+    viewer: PropTypes.shape({
+      email: PropTypes.string,
+    }),
+  }
+
+  state = {
+    page: pages.AFT_ORDER_ENTRY,
+    orderEntries: [],
+    noOfSelectedOrders: 0,
+    selectAll: false,
+    options: {
+      accounts: [],
+      side: [
+        { value: 'S', label: 'Subscription' },
+        { value: 'R', label: 'Redemption' },
+      ],
+      qtyType: [{ value: 'U', label: 'Units' }, { value: 'C', label: 'Cash' }],
+      currencyByQtyType: {
+        U: [
+          { value: 'Fund CCY', label: 'Fund CCY' },
+          { value: 'EUR', label: 'EUR' },
+        ],
+        C: [
+          { value: 'AAA', label: 'AAA' },
+          { value: 'AED', label: 'AED' },
+          { value: 'USD', label: 'USD' },
+        ],
+      },
+      currency: [],
+    },
+  }
+
+  componentDidMount() {
+    const { options } = this.state
+    options.accounts = this.props.getAllAccounts()
+    options.currency = options.currencyByQtyType.U
+    this.setState({ options })
+  }
+
+  componentWillReceiveProps(nextProps) {
+    // console.log(prevProps)
+    console.log('>>>>>-----', nextProps)
+    this.setState({
+      orderEntries: nextProps.orderEntries,
+      selectAll: nextProps.selectAll,
+    })
+    this.getSelectedOrdersCount(nextProps.orderEntries)
+  }
+
+  getSelectedOrdersCount = orderEntries => {
+    const selectedOrders = _.filter(orderEntries, o => o.selected)
+    this.setState({ noOfSelectedOrders: selectedOrders.length })
+  }
+
+  onSelectAllFieldChange = (event, newValue) => {
+    const { orderEntries } = this.state
+    _.forEach(orderEntries, item => {
+      const record = item
+      record.selected = newValue
+    })
+    this.props.updateOrderEntriesState('orderEntries', orderEntries)
+    this.getSelectedOrdersCount(this.state.orderEntries)
+  }
+
+  addNewOrderEntry = () => {
+    const { orderEntries, selectAll } = this.state
+    orderEntries.push({
+      selected: selectAll,
+    })
+    this.props.updateOrderEntriesState('orderEntries', orderEntries)
+    this.getSelectedOrdersCount(this.state.orderEntries)
+  }
+
+  removeSelectedOrderEntry = () => {
+    const { orderEntries } = this.state
+    _.remove(orderEntries, item => item.selected)
+    this.props.updateOrderEntriesState('orderEntries', orderEntries)
+    this.props.updateOrderEntriesState('selectAll', false)
+    this.getSelectedOrdersCount(this.state.orderEntries)
+  }
+
+  setCurrencyByQtyType = qtyTypeValue => {
+    const { options } = this.state
+    options.currency = options.currencyByQtyType[qtyTypeValue]
+    this.setState({ options })
+  }
+
+  onQtyTypeChange = (event, newValue, previousValue, name) => {
+    const { orderEntries } = this.state
+    // console.log('<<<<<<---- qty ', event, newValue, previousValue, name)
+    const selectedRowIndex = parseInt(name.match(/\d+/)[0], 10)
+    this.setCurrencyByQtyType(newValue.value)
+    delete orderEntries[selectedRowIndex].currency
+    this.props.updateOrderEntriesState('orderEntries', orderEntries)
+  }
+
+  onOrderSelectionChange = () => {
+    this.getSelectedOrdersCount(this.state.orderEntries)
+  }
+
+  onSubmit = values => {
+    const { orderEntries } = values
+    console.log(orderEntries)
+    this.setState({
+      page: pages.AFT_ORDER_CONFIRMATION,
+      orderEntries,
+    })
+  }
+
+  returnToOrderEntry = () => {
+    this.setState({
+      page: pages.AFT_ORDER_ENTRY,
+    })
+  }
+
+  goToConfirmation = () => {
+    this.setState({
+      page: pages.AFT_ORDER_CONFIRMATION,
+    })
+  }
+
+  render() {
+    const { handleSubmit, title } = this.props
+    const { page, orderEntries } = this.state
+    return (
+      <form onSubmit={handleSubmit(this.onSubmit)} style={{ width: '100%' }}>
+        {page === pages.AFT_ORDER_ENTRY && (
+          <Card className={s.card}>
+            <CardHeader>
+              <CardTitle>{title}</CardTitle>
+            </CardHeader>
+            <CardContent style={{ height: '60vh' }}>
+              <div
+                style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  overflowX: 'auto',
+                  overflowY: 'auto',
+                }}
+              >
+                <div style={{ display: 'flex' }}>
+                  <div style={{ flex: 1, order: 1, width: '3%' }}>
+                    <Field
+                      name="selectAll"
+                      type="checkbox"
+                      onChange={this.onSelectAllFieldChange}
+                      value={this.state.selectAll}
+                      component={CheckboxField}
+                    />
+                  </div>
+                  <div className={s.heading} style={{ order: 2, width: '15%' }}>
+                    Account Number
+                  </div>
+                  <div className={s.heading} style={{ order: 3, width: '13%' }}>
+                    ISIN
+                  </div>
+                  <div className={s.heading} style={{ order: 3, width: '15%' }}>
+                    Side
+                  </div>
+                  <div className={s.heading} style={{ order: 3, width: '15%' }}>
+                    Qty Type
+                  </div>
+                  <div className={s.heading} style={{ order: 3, width: '14%' }}>
+                    Amount
+                  </div>
+                  <div className={s.heading} style={{ order: 3, width: '15%' }}>
+                    Currency
+                  </div>
+                  <div className={s.heading} style={{ order: 3, width: '10%' }}>
+                    Client Reference
+                  </div>
+                </div>
+              </div>
+              <FieldArray
+                name="orderEntries"
+                component={AFTOrderEntryFormFundGroup}
+                options={this.state.options}
+                onQtyTypeChange={this.onQtyTypeChange}
+                onOrderSelectionChange={this.onOrderSelectionChange}
+              />
+            </CardContent>
+            <CardFooter flexEnd>
+              <Button
+                primary
+                type="submit"
+                disabled={this.state.noOfSelectedOrders === 0}
+              >
+                Enter Selected Orders{' '}
+                {this.state.noOfSelectedOrders > 0
+                  ? this.state.noOfSelectedOrders
+                  : ''}
+              </Button>
+              <Button onClick={this.addNewOrderEntry}>Add More Orders</Button>
+              <Button onClick={this.removeSelectedOrderEntry}>
+                Remove Selected Orders
+              </Button>
+              <Button>Clear Form</Button>
+              <Button>Upload Orders</Button>
+            </CardFooter>
+          </Card>
+        )}
+        {page === pages.AFT_ORDER_CONFIRMATION && (
+          <Card className={s.card}>
+            <CardHeader>
+              <CardTitle>{title}</CardTitle>
+            </CardHeader>
+            <CardContent style={{ height: '60vh' }}>
+              <div
+                style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  overflowX: 'auto',
+                  overflowY: 'auto',
+                }}
+              >
+                <div style={{ display: 'flex' }}>
+                  <div style={{ flex: 1, order: 1, width: '3%' }}>
+                    <Field
+                      name="selectAll"
+                      type="checkbox"
+                      onChange={this.onSelectAllFieldChange}
+                      value={this.state.selectAll}
+                      component={CheckboxField}
+                    />
+                  </div>
+                  <div className={s.heading} style={{ order: 2, width: '15%' }}>
+                    Account Number
+                  </div>
+                  <div className={s.heading} style={{ order: 3, width: '13%' }}>
+                    ISIN
+                  </div>
+                  <div className={s.heading} style={{ order: 3, width: '15%' }}>
+                    Side
+                  </div>
+                  <div className={s.heading} style={{ order: 3, width: '15%' }}>
+                    Qty Type
+                  </div>
+                  <div className={s.heading} style={{ order: 3, width: '14%' }}>
+                    Amount
+                  </div>
+                  <div className={s.heading} style={{ order: 3, width: '15%' }}>
+                    Currency
+                  </div>
+                  <div className={s.heading} style={{ order: 3, width: '10%' }}>
+                    Client Reference
+                  </div>
+                </div>
+              </div>
+              {orderEntries.map(orderEntry => (
+                <div
+                  style={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    overflowX: 'auto',
+                    overflowY: 'auto',
+                  }}
+                >
+                  <div style={{ display: 'flex' }}>
+                    <div style={{ flex: 1, order: 1, width: '3%' }}>
+                      <Field
+                        name="selectAll"
+                        type="checkbox"
+                        onChange={this.onSelectAllFieldChange}
+                        value={this.state.selectAll}
+                        component={CheckboxField}
+                      />
+                    </div>
+                    <div
+                      className={s.heading}
+                      style={{ order: 2, width: '15%' }}
+                    >
+                      {orderEntry.accounts.label}
+                    </div>
+                    <div
+                      className={s.heading}
+                      style={{ order: 3, width: '13%' }}
+                    >
+                      {orderEntry.isin}
+                    </div>
+                    <div
+                      className={s.heading}
+                      style={{ order: 3, width: '15%' }}
+                    >
+                      {orderEntry.side.label}
+                    </div>
+                    <div
+                      className={s.heading}
+                      style={{ order: 3, width: '15%' }}
+                    >
+                      {orderEntry.qtyType.label}
+                    </div>
+                    <div
+                      className={s.heading}
+                      style={{ order: 3, width: '14%' }}
+                    >
+                      {orderEntry.amount}
+                    </div>
+                    <div
+                      className={s.heading}
+                      style={{ order: 3, width: '15%' }}
+                    >
+                      {orderEntry.currency.label}
+                    </div>
+                    <div
+                      className={s.heading}
+                      style={{ order: 3, width: '10%' }}
+                    >
+                      {orderEntry.clientreference}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </CardContent>
+            <CardFooter flexEnd>
+              <Button primary type="submit">
+                Cofirm Orders
+              </Button>
+
+              <Button onClick={this.removeSelectedOrderEntry}>
+                Remove Selected Orders
+              </Button>
+
+              <Button onClick={this.returnToOrderEntry}>
+                Return to orders entry
+              </Button>
+            </CardFooter>
+          </Card>
+        )}
+      </form>
+    )
+  }
+}
+
+export default AFTOrderEntryForm
+---
+currencies: Array(41)
+0: {currencyId: "211", currencyCode: "AAA", name: "aaa", __typename: "Currency"}
+1: {currencyId: "1", currencyCode: "AED", name: "UAE Dirham", __typename: "Currency"}
+2: {currencyId: "6", currencyCode: "ARS", name: "ARGENTINE'S PESO DIRECT", __typename: "Currency"}
+3: {currencyId: "11", currencyCode: "ATS", name: "Shilling", __typename: "Currency"}
+4: {currencyId: "16", currencyCode: "AUD", name: "AUSSIE DOLLAR", __typename: "Currency"}
+5: {currencyId: "216", currencyCode: "BBB", name: "bbb", __typename: "Currency"}
+6: {currencyId: "26", currencyCode: "BEF", name: "Belgian Franc", __typename: "Currency"}
