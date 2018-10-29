@@ -6,3 +6,43 @@ in for loop use that at i++
 which means replace i++ with i = parseFloat((i + 0.1).toFixed(1)); 
 
 source: https://stackoverflow.com/questions/19290628/how-to-increment-number-by-0-01-in-javascript-using-a-loop
+--
+
+data: {enterAftOrders: {id: "QWZ0T3JkZXJSZXNwb25zZXM6NjIzNTkyY2QtODZjOS00YWQwLTk3NWYtOGFmZmViZDQ0MWRh",…}}
+enterAftOrders: {id: "QWZ0T3JkZXJSZXNwb25zZXM6NjIzNTkyY2QtODZjOS00YWQwLTk3NWYtOGFmZmViZDQ0MWRh",…}
+id: "QWZ0T3JkZXJSZXNwb25zZXM6NjIzNTkyY2QtODZjOS00YWQwLTk3NWYtOGFmZmViZDQ0MWRh"
+orderResponses: [{id: "QWZ0T3JkZXJSZXNwb25zZTphNTQ3MWNiZC0yZGY5LTRhOTEtOTEwZS03ZTU5ODJiY2M2NjE=",…}]
+0: {id: "QWZ0T3JkZXJSZXNwb25zZTphNTQ3MWNiZC0yZGY5LTRhOTEtOTEwZS03ZTU5ODJiY2M2NjE=",…}
+id: "QWZ0T3JkZXJSZXNwb25zZTphNTQ3MWNiZC0yZGY5LTRhOTEtOTEwZS03ZTU5ODJiY2M2NjE="
+orderRequest: {id: "QWZ0T3JkZXJSZXF1ZXN0OmE1NDcxY2JkLTJkZjktNGE5MS05MTBlLTdlNTk4MmJjYzY2MQ==",…}
+accountNumber: "22332131312"
+amount: "123232222254.67"
+currency: "AUD"
+id: "QWZ0T3JkZXJSZXF1ZXN0OmE1NDcxY2JkLTJkZjktNGE5MS05MTBlLTdlNTk4MmJjYzY2MQ=="
+isin: "jjjnnnn44422"
+quantityType: "C"
+side: "S"
+__typename: "AftOrderRequest"
+tradeBusinessRulesValidationErrors: [{errorCode: "0", errorLevel: "WARNING",…}]
+0: {errorCode: "0", errorLevel: "WARNING",…}
+errorCode: "0"
+errorLevel: "WARNING"
+errorMessage: "Valid (1 Approval Required): Order exceeds trade limit of 10,000,000.00"
+__typename: "TradeValidationErrorType"
+tradeInputValidationErrors: []
+__typename: "AftOrderResponse"
+__typename: "AftOrderResponses"
+
+--
+
+>>>>>> renderConfirmOrderEntry  
+{selected: true, qtyType: {…}, currency: {…}, accounts: "22332131312", isin: "jjjnnnn44422", …}
+accounts: "22332131312"
+amount: "123232222254.67"
+currency: {value: "AUD", label: "AUD"}
+isin: "jjjnnnn44422"
+qtyType: {value: "C", label: "Cash"}
+selected: true
+side: {value: "S", label: "Subscription"}
+tradeInputValidationErrors: []
+__proto__: Object
