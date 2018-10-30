@@ -8,47 +8,8 @@ which means replace i++ with i = parseFloat((i + 0.1).toFixed(1));
 source: https://stackoverflow.com/questions/19290628/how-to-increment-number-by-0-01-in-javascript-using-a-loop
 --
 
-data: {enterAftOrders: {id: "QWZ0T3JkZXJSZXNwb25zZXM6NjIzNTkyY2QtODZjOS00YWQwLTk3NWYtOGFmZmViZDQ0MWRh",…}}
-enterAftOrders: {id: "QWZ0T3JkZXJSZXNwb25zZXM6NjIzNTkyY2QtODZjOS00YWQwLTk3NWYtOGFmZmViZDQ0MWRh",…}
-id: "QWZ0T3JkZXJSZXNwb25zZXM6NjIzNTkyY2QtODZjOS00YWQwLTk3NWYtOGFmZmViZDQ0MWRh"
-orderResponses: [{id: "QWZ0T3JkZXJSZXNwb25zZTphNTQ3MWNiZC0yZGY5LTRhOTEtOTEwZS03ZTU5ODJiY2M2NjE=",…}]
-0: {id: "QWZ0T3JkZXJSZXNwb25zZTphNTQ3MWNiZC0yZGY5LTRhOTEtOTEwZS03ZTU5ODJiY2M2NjE=",…}
-id: "QWZ0T3JkZXJSZXNwb25zZTphNTQ3MWNiZC0yZGY5LTRhOTEtOTEwZS03ZTU5ODJiY2M2NjE="
-orderRequest: {id: "QWZ0T3JkZXJSZXF1ZXN0OmE1NDcxY2JkLTJkZjktNGE5MS05MTBlLTdlNTk4MmJjYzY2MQ==",…}
-accountNumber: "22332131312"
-amount: "123232222254.67"
-currency: "AUD"
-id: "QWZ0T3JkZXJSZXF1ZXN0OmE1NDcxY2JkLTJkZjktNGE5MS05MTBlLTdlNTk4MmJjYzY2MQ=="
-isin: "jjjnnnn44422"
-quantityType: "C"
-side: "S"
-__typename: "AftOrderRequest"
-tradeBusinessRulesValidationErrors: [{errorCode: "0", errorLevel: "WARNING",…}]
-0: {errorCode: "0", errorLevel: "WARNING",…}
-errorCode: "0"
-errorLevel: "WARNING"
-errorMessage: "Valid (1 Approval Required): Order exceeds trade limit of 10,000,000.00"
-__typename: "TradeValidationErrorType"
-tradeInputValidationErrors: []
-__typename: "AftOrderResponse"
-__typename: "AftOrderResponses"
+
 
 --
 
->>>>>> renderConfirmOrderEntry  
-{selected: true, qtyType: {…}, currency: {…}, accounts: "22332131312", isin: "jjjnnnn44422", …}
-accounts: "22332131312"
-amount: "123232222254.67"
-currency: {value: "AUD", label: "AUD"}
-isin: "jjjnnnn44422"
-qtyType: {value: "C", label: "Cash"}
-selected: true
-side: {value: "S", label: "Subscription"}
-tradeInputValidationErrors: []
-__proto__: Object
-
--
-
-
-{"data":{"enterAftOrders":{"id":"QWZ0T3JkZXJSZXNwb25zZXM6MjQwMDdmMDAtMTE2NC00ZDQ5LWFjYjUtMjZjNTgwODA5NWJk","orderResponses":[{"id":"QWZ0T3JkZXJSZXNwb25zZTozZjE4YTlkMC01MDE4LTQ0NTgtODY2ZC1jMDU1NTgzZGYxYzI=","orderRequest":{"id":"QWZ0T3JkZXJSZXF1ZXN0OjNmMThhOWQwLTUwMTgtNDQ1OC04NjZkLWMwNTU1ODNkZjFjMg==","accountNumber":"zzzzzzzzzzzzzzzz","isin":"jj1324242424","side":"R","quantityType":"C","amount":"1232354.67","currency":"AUD","__typename":"AftOrderRequest"},"tradeInputValidationErrors":[],"tradeBusinessRulesValidationErrors":[{"errorCode":"0","errorLevel":"WARNING","errorMessage":"Valid (1 Approval Required): Investor Permission","__typename":"TradeValidationErrorType"}],"__typename":"AftOrderResponse"}],"__typename":"AftOrderResponses"}},"extensions":{"tracing":{"version":1,"startTime":"2018-10-29T18:28:14.758Z","endTime":"2018-10-29T18:28:14.804Z","duration":45573475,"execution":{"resolvers":[{"path":["enterAftOrders"],"parentType":"Mutation","fieldName":"enterAftOrders","returnType":"AftOrderResponses","startOffset":5703119,"duration":39200052},{"path":["enterAftOrders","id"],"parentType":"AftOrderResponses","fieldName":"id","returnType":"ID!","startOffset":44956585,"duration":44004},{"path":["enterAftOrders","orderResponses"],"parentType":"AftOrderResponses","fieldName":"orderResponses","returnType":"[AftOrderResponse]","startOffset":45009169,"duration":18265},{"path":["enterAftOrders","orderResponses",0,"id"],"parentType":"AftOrderResponse","fieldName":"id","returnType":"ID!","startOffset":45053173,"duration":23801},{"path":["enterAftOrders","orderResponses",0,"orderRequest"],"parentType":"AftOrderResponse","fieldName":"orderRequest","returnType":"AftOrderRequest","startOffset":45083339,"duration":12454},{"path":["enterAftOrders","orderResponses",0,"orderRequest","id"],"parentType":"AftOrderRequest","fieldName":"id","returnType":"ID!","startOffset":45117380,"duration":22694},{"path":["enterAftOrders","orderResponses",0,"orderRequest","accountNumber"],"parentType":"AftOrderRequest","fieldName":"accountNumber","returnType":"String","startOffset":45192658,"duration":14115},{"path":["enterAftOrders","orderResponses",0,"orderRequest","isin"],"parentType":"AftOrderRequest","fieldName":"isin","returnType":"String","startOffset":45215629,"duration":5812},{"path":["enterAftOrders","orderResponses",0,"orderRequest","side"],"parentType":"AftOrderRequest","fieldName":"side","returnType":"String","startOffset":45226699,"duration":5258},{"path":["enterAftOrders","orderResponses",0,"orderRequest","quantityType"],"parentType":"AftOrderRequest","fieldName":"quantityType","returnType":"String","startOffset":45237493,"duration":5258},{"path":["enterAftOrders","orderResponses",0,"orderRequest","amount"],"parentType":"AftOrderRequest","fieldName":"amount","returnType":"String","startOffset":45247456,"duration":4981},{"path":["enterAftOrders","orderResponses",0,"orderRequest","currency"],"parentType":"AftOrderRequest","fieldName":"currency","returnType":"String","startOffset":45257696,"duration":4981},{"path":["enterAftOrders","orderResponses",0,"tradeInputValidationErrors"],"parentType":"AftOrderResponse","fieldName":"tradeInputValidationErrors","returnType":"[FCErrorType]","startOffset":45293674,"duration":12454},{"path":["enterAftOrders","orderResponses",0,"tradeBusinessRulesValidationErrors"],"parentType":"AftOrderResponse","fieldName":"tradeBusinessRulesValidationErrors","returnType":"[TradeValidationErrorType]","startOffset":45313877,"duration":14115},{"path":["enterAftOrders","orderResponses",0,"tradeBusinessRulesValidationErrors",0,"errorCode"],"parentType":"TradeValidationErrorType","fieldName":"errorCode","returnType":"String","startOffset":45348749,"duration":6919},{"path":["enterAftOrders","orderResponses",0,"tradeBusinessRulesValidationErrors",0,"errorLevel"],"parentType":"TradeValidationErrorType","fieldName":"errorLevel","returnType":"TradeValidationErrorLevelEnum","startOffset":45364524,"duration":6088},{"path":["enterAftOrders","orderResponses",0,"tradeBusinessRulesValidationErrors",0,"errorMessage"],"parentType":"TradeValidationErrorType","fieldName":"errorMessage","returnType":"String","startOffset":45453639,"duration":9133}]}},"cacheControl":{"version":1,"hints":[{"path":["enterAftOrders"],"maxAge":0},{"path":["enterAftOrders","orderResponses"],"maxAge":0},{"path":["enterAftOrders","orderResponses",0,"orderRequest"],"maxAge":0},{"path":["enterAftOrders","orderResponses",0,"tradeInputValidationErrors"],"maxAge":0},{"path":["enterAftOrders","orderResponses",0,"tradeBusinessRulesValidationErrors"],"maxAge":0}]}}}
-
+>
